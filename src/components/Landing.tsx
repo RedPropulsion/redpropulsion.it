@@ -1,9 +1,6 @@
 import { ArrowDown } from "lucide-react";
 import styles from "./Landing.module.css";
-
-type Props = {
-  children?: React.ReactNode;
-};
+import RichText from "@/components//RichText";
 
 function Stars() {
   return (
@@ -24,11 +21,19 @@ function Stars() {
   );
 }
 
-export default function Landing({ children }: Props) {
+type Props = {
+  title: string;
+  subtitle: string;
+};
+
+export default function Landing({ title, subtitle }: Props) {
   return (
     <div className={styles.landing}>
       <Stars />
-      <div className={styles.textContainer}>{children}</div>
+      <div className={styles.textContainer}>
+        <h1>{title}</h1>
+        <RichText content={subtitle} />
+      </div>
       <ArrowDown className={styles.arrowDown} />
       <div className={styles.transition} />
     </div>

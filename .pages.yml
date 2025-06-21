@@ -1,0 +1,88 @@
+media:
+  input: public
+  output: /
+content:
+  - name: index
+    label: Homepage
+    type: file
+    path: src/content/index.json
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: description, label: Description, type: string, options: { maxLength: 100 } }
+      - { name: landing, component: landing }
+      - name: sections
+        label: Sections
+        type: block
+        blockKey: type
+        list: true
+        blocks:
+          - name: text_section
+            label: Text Section
+            component: section
+          - name: cards_section
+            label: Cards Section
+            fields:
+              - name: cards
+                label: Cards
+                component: card
+                list: true
+  - name: footer
+    label: Footer
+    type: file
+    path: src/content/footer.json
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: body, label: Body, type: rich-text }
+      - { name: social_links, label: Social Links, component: social_links, list: true }
+components:
+  landing:
+    label: Landing Section
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: subtitle
+        label: Subtitle
+        type: rich-text
+  section:
+    label: Section
+    fields:
+      - name: title
+        label: Section title
+        type: string
+      - name: body
+        label: Section content
+        type: rich-text
+  social_links:
+    label: Social Link
+    fields:
+      - name: name
+        label: Name
+        type: string
+      - name: link
+        label: Link
+        type: string
+      - name: icon
+        label: Link Icon
+        type: image
+  button:
+    label: Button
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: link
+        label: Link
+        type: string
+  card:
+    label: Card (Experimental)
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: body
+        label: Body
+        type: rich-text
+      - name: button
+        label: Button
+        component: button

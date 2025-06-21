@@ -1,0 +1,16 @@
+{
+  "title": "Red Propulsion",
+  "body": "Dipartimento di Ingegneria Industriale\n\nUniversità di Firenze\n\nEmail: [info@redpropulsion.it](mailto:info@redpropulsion.it)",
+  "social_links": [
+    {
+      "name": "Github",
+      "link": "https://github.com/RedPropulsion",
+      "icon": "/github-logo-white.png"
+    },
+    {
+      "name": "Instagram",
+      "link": "https://www.instagram.com/red_propulsion/",
+      "icon": "/instagram-logo-white.png"
+    }
+  ]
+}

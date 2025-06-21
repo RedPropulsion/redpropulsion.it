@@ -1,0 +1,43 @@
+.card {
+  width: 250px;
+  height: 300px;
+  border: 2px solid var(--foreground-light);
+  border-radius: 10px;
+  padding: 0.5rem;
+
+  h3 {
+    color: var(--foreground-light);
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  display: flex;
+  width: 100vw;
+  justify-content: center;
+  gap: 2rem;
+  margin-block: 1rem;
+}
+
+.carousel {
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+
+.button {
+  margin-top: auto;
+  background-color: var(--foreground-light);
+  padding: 0.5rem;
+  border-radius: 10px;
+  text-align: center;
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--background);
+}
