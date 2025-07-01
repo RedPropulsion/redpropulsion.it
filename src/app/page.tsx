@@ -1,5 +1,6 @@
 import CardsSection, { CardProps } from "@/components/CardsSection";
 import Landing from "@/components/Landing";
+import Navbar from "@/components/Navbar";
 import Section from "@/components/Section";
 
 import Content from "@/content/index.json";
@@ -46,6 +47,7 @@ function validateBlockContent(
 export default function Home() {
   return (
     <>
+      <Navbar />
       <Landing {...Content.landing} />
       {Content.sections.map((content, i) => {
         validateBlockContent(content);

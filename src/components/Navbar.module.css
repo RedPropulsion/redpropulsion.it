@@ -3,32 +3,28 @@
   width: 100%;
   padding: 1rem;
   background-color: var(--background-dark);
-  color: var(--foreground-dark);
   z-index: 100;
   display: flex;
 
   h1 {
-    font-size: 2rem;
+    color: white;
+    font-size: 1.75rem;
     font-weight: bold;
     margin-right: 1rem;
   }
 
-  ul {
-    display: flex;
-    align-items: center;
-  }
-
-  li {
-    margin-top: 0.25rem;
-    margin-inline: 1rem;
-  }
-
   a {
+    color: var(--foreground-dim);
     text-decoration: none;
-    color: inherit;
 
     &:hover {
       text-decoration: underline;
     }
   }
+}
+
+.linkContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
 }
