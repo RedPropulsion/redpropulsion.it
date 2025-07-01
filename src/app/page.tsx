@@ -1,6 +1,5 @@
 import CardsSection, { CardProps } from "@/components/CardsSection";
 import Landing from "@/components/Landing";
-import Navbar from "@/components/Navbar";
 import Section from "@/components/Section";
 
 import Content from "@/content/index.json";
@@ -25,7 +24,7 @@ type BlockContent =
       cards: CardProps[];
     };
 
-function Block({ content }: { content: BlockContent }): React.ReactNode {
+export function Block({ content }: { content: BlockContent }): React.ReactNode {
   switch (content.type) {
     case "text_section": {
       return <Section {...content} />;
@@ -36,7 +35,7 @@ function Block({ content }: { content: BlockContent }): React.ReactNode {
   }
 }
 
-function validateBlockContent(
+export function validateBlockContent(
   content: { type: string } & Record<string, unknown>,
 ): asserts content is BlockContent {
   if (blockTypes.indexOf(content.type) === -1) {
@@ -47,7 +46,6 @@ function validateBlockContent(
 export default function Home() {
   return (
     <>
-      <Navbar />
       <Landing {...Content.landing} />
       {Content.sections.map((content, i) => {
         validateBlockContent(content);
