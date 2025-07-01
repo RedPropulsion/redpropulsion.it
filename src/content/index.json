@@ -1,9 +1,9 @@
 {
   "title": "Red Propulsion",
-  "description": "Test description",
+  "description": "Sito web dell'associazione studentesca Red Propulsion dell'Università di Firenze!",
   "landing": {
     "title": "Red Propulsion",
-    "subtitle": "This is a cool subtitle\n\n_This is another_"
+    "subtitle": "Push the limits!\n\n_Progettiamo, costruiamo e testiamo razzi sonda!_"
   },
   "sections": [
     {
@@ -18,4 +18,3 @@
     }
   ]
 }
-
