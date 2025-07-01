@@ -16,7 +16,9 @@ export default function Footer({ title, body, social_links }: Props) {
       <ul>
         {social_links.map((item) => (
           <li key={item.name}>
-            <Image src={item.icon} alt={item.name} width={50} height={50} />
+            <a href={item.link}>
+              <Image src={item.icon} alt={item.name} width={50} height={50} />
+            </a>
           </li>
         ))}
       </ul>
