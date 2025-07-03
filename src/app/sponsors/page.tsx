@@ -1,6 +1,6 @@
 import Content from "@/content/sponsors.json";
-import { Block, validateBlockContent } from "../page";
 import Navbar from "@/components/Navbar";
+import Block, { validateBlockContent } from "@/components/Block";
 
 export function generateMetadata() {
   return {
