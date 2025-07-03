@@ -13,9 +13,11 @@
 
   p {
     line-height: 1.5rem;
+    margin-bottom: 2rem;
   }
 
   img {
     width: 100%;
+    margin-block: 1.5rem;
   }
 }
