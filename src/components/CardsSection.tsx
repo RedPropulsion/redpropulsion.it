@@ -1,7 +1,23 @@
+"use client";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+import {
+  EffectCoverflow,
+  Mousewheel,
+  Navigation,
+  Pagination,
+} from "swiper/modules";
+
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import "swiper/css/mousewheel";
+import "swiper/css/effect-coverflow";
+
 import RichText from "./RichText";
+import Bounded from "./Bounded";
 
 import styles from "./CardsSection.module.css";
-import Bounded from "./Bounded";
 
 export type CardProps = {
   title: string;
@@ -31,20 +47,23 @@ type Props = {
 export default function CardsSection({ cards }: Props) {
   return (
     <Bounded>
-      <div className={styles.carousel}>
-        <div className={styles.container}>
-          {cards.map((item, i) => (
-            <div
-              key={i}
-              style={{
-                scrollSnapAlign: "center",
-              }}
-            >
-              <Card {...item} />
-            </div>
-          ))}
-        </div>
-      </div>
+      <Swiper
+        modules={[Navigation, Pagination, Mousewheel, EffectCoverflow]}
+        navigation
+        pagination
+        mousewheel
+        slidesPerView={"auto"}
+        spaceBetween={30}
+        className={styles.swiper}
+        effect="coverflow"
+        centeredSlides
+      >
+        {cards.map((item, i) => (
+          <SwiperSlide key={i} className={styles.swiperSlide}>
+            <Card {...item} />
+          </SwiperSlide>
+        ))}
+      </Swiper>
     </Bounded>
   );
 }

@@ -105,7 +105,7 @@ components:
         label: Link
         type: string
   card:
-    label: Card (Experimental)
+    label: Card
     fields:
       - name: title
         label: Title

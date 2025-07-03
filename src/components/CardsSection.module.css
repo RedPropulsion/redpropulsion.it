@@ -1,9 +1,9 @@
 .card {
-  width: 250px;
   height: 300px;
   border: 2px solid var(--foreground-light);
   border-radius: 10px;
   padding: 0.5rem;
+  background-color: var(--background-dark);
 
   h3 {
     color: var(--foreground-light);
@@ -12,9 +12,9 @@
     margin-bottom: 1rem;
   }
 
-  margin-inline: auto;
   display: flex;
   flex-direction: column;
+  margin-bottom: 2rem;
 }
 
 .container {
@@ -40,4 +40,9 @@
   text-decoration: none;
   font-weight: bold;
   color: var(--background);
+}
+
+.swiperSlide {
+  width: 50%;
+  min-width: 225px;
 }

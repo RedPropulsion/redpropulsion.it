@@ -20,6 +20,7 @@
     "remark-directive-rehype": "^0.4.2",
     "remark-parse": "^11.0.0",
     "remark-sectionize": "^2.1.0",
+    "swiper": "^11.2.10",
     "unified": "^11.0.5",
     "unist-util-remove": "^4.0.0"
   },
