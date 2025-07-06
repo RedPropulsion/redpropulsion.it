@@ -1,14 +1,5 @@
-@import url(https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css);
-
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-em {
-  font-style: italic;
-}
+@import "tailwindcss";
+@import "./styles/rich-content";
 
 :root {
   --background-dark: #0a0a0f;
@@ -34,9 +25,38 @@ em {
   --peach: #f2b99a;
 }
 
+@theme inline {
+  --color-primary: var(--primary);
+  --color-background-dark: var(--background-dark);
+  --color-foreground-light: var(--foreground-light);
+  --color-foreground-dim: var(--forground-dim);
+}
+
+@layer components {
+  .space-gradient {
+    background: linear-gradient(
+      135deg,
+      var(--background-dark) 0%,
+      var(--background) 50%,
+      var(--background-light) 100%
+    );
+  }
+
+  .rocket-gradient,
+  .text-gradient {
+    background: linear-gradient(135deg, #dc2626 0%, #ea580c 50%, #d97706 100%);
+  }
+
+  .text-gradient {
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+}
+
 html {
   /* Needed for safari in iOS  */
-  background-color: var(--background-dark);
+  @apply bg-background-dark;
 }
 
 body {

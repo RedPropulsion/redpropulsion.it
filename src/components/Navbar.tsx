@@ -1,5 +1,4 @@
 import ShowOnScroll from "@/components/ShowOnScroll";
-import styles from "./Navbar.module.css";
 
 import Content from "@/content/navbar.json";
 import Link from "next/link";
@@ -11,13 +10,19 @@ type Props = {
 export default function Navbar({ alwaysShow }: Props) {
   return (
     <ShowOnScroll active={!alwaysShow}>
-      <div className={styles.navbar}>
+      <div className="fixed w-full p-4 bg-background-dark z-100 flex">
         <Link href="/">
-          <h1>{Content.title}</h1>
+          <h1 className="text-white font-bold mr-4 text-3xl hover:underline">
+            {Content.title}
+          </h1>
         </Link>
-        <div className={styles.linkContainer}>
+        <div className="flex align-center gap-4 my-auto">
           {Content.links.map((item, i) => (
-            <a key={i} href={item.link}>
+            <a
+              key={i}
+              href={item.link}
+              className="text-foreground-dim hover:underline"
+            >
               {item.title}
             </a>
           ))}

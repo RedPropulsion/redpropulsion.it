@@ -1,14 +1,13 @@
 import { ArrowDown } from "lucide-react";
-import styles from "./Landing.module.css";
-import RichText from "@/components//RichText";
+import RichText from "@/components/RichText";
 
 function Stars() {
   return (
-    <div className={styles.starsContainer}>
+    <div className="absolute inset-0 overflow-hidden">
       {[...Array(50)].map((_, i) => (
         <div
           key={i}
-          className={styles.star}
+          className="absolute bg-white w-1 h-1 rounded-full animate-pulse"
           style={{
             left: `${Math.random() * 100}%`,
             top: `${Math.random() * 100}%`,
@@ -28,14 +27,18 @@ type Props = {
 
 export default function Landing({ title, subtitle }: Props) {
   return (
-    <div className={styles.landing}>
+    <div className="h-dvh flex flex-col items-center justify-center relative">
       <Stars />
-      <div className={styles.textContainer}>
-        <h1>{title}</h1>
-        <RichText content={subtitle} />
+      <div className="z-10 text-center">
+        <h1 className="text-5xl md:text-8xl w-min font-bold uppercase text-gradient mb-4 mx-auto">
+          {title}
+        </h1>
+        <div className="bigger-rich">
+          <RichText content={subtitle} />
+        </div>
       </div>
-      <ArrowDown className={styles.arrowDown} />
-      <div className={styles.transition} />
+      <ArrowDown className="mt-12 text-primary w-[50px] h-[50px] animate-bounce" />
+      <div className="absolute bottom-0 left-0 right-0 h-[200px] mask-t-from-0 bg-background-dark" />
     </div>
   );
 }

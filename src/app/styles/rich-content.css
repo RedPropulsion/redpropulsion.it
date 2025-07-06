@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@layer components {
+  .rich-text {
+    --font-size-paragraph: theme("fontSize.base");
+
+    p {
+      font-size: var(--font-size-paragraph);
+      @apply mb-8 leading-6;
+    }
+
+    em {
+      @apply italic;
+    }
+
+    a {
+      @apply underline hover:text-primary;
+    }
+
+    img {
+      @apply w-full my-6;
+    }
+  }
+
+  .bigger-rich .rich-text {
+    --font-size-paragraph: theme("fontSize.2xl");
+  }
+}
