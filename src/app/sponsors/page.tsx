@@ -1,4 +1,4 @@
-import Content from "@/content/sponsors.json";
+import Content from "@/content/sponsors_page.json";
 import Navbar from "@/components/Navbar";
 import Block, { validateBlockContent } from "@/components/Block";
 

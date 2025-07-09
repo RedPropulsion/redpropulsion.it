@@ -5,7 +5,7 @@ content:
   - name: index
     label: Homepage
     type: file
-    path: src/content/index.json
+    path: src/content/index_page.json
     fields:
       - { name: title, label: Title, type: string, required: true }
       - { name: description, label: Description, type: string, options: { maxLength: 100 } }
@@ -41,10 +41,10 @@ content:
     fields:
       - { name: title, label: Title, type: string, required: true }
       - { name: links, label: Links, component: button, list: true }
-  - name: sponsors
+  - name: sponsors_page
     label: Sponsors page
     type: file
-    path: src/content/sponsors.json
+    path: src/content/sponsors_page.json
     fields:
       - { name: title, label: Title, type: string, required: true }
       - { name: description, label: Description, type: string, options: { maxLength: 100 } }
@@ -64,6 +64,12 @@ content:
                 label: Cards
                 component: card
                 list: true
+  - name: sponsors
+    label: Sponsors List
+    type: file
+    path: src/content/sponsors.json
+    fields:
+      - { name: sponsors, label: Sponsors, component: sponsor, list: true }
 components:
   landing:
     label: Landing Section
@@ -116,3 +122,18 @@ components:
       - name: button
         label: Button
         component: button
+  sponsor:
+    label: Sponsor
+    fields:
+      - name: name
+        label: Name
+        type: string
+      - name: image
+        label: Logo
+        type: image
+      - name: url
+        label: Url
+        type: string
+      - name: description
+        label: description
+        type: string
