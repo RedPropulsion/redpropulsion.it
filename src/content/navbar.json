@@ -2,12 +2,19 @@
   "title": "Red Propulsion",
   "links": [
     {
-      "title": "test",
+      "title": "Progetti",
       "link": "/"
     },
-
     {
-      "title": "test",
+      "title": "Dipartimenti",
+      "link": "/"
+    },
+    {
+      "title": "Sponsors",
+      "link": "/"
+    },
+    {
+      "title": "Contattaci",
       "link": "/"
     }
   ]
