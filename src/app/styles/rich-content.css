@@ -21,8 +21,4 @@
       @apply w-full my-6;
     }
   }
-
-  .bigger-rich .rich-text {
-    --font-size-paragraph: theme("fontSize.2xl");
-  }
 }

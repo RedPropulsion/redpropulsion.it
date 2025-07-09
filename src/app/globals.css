@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&family=Roboto+Condensed:wght@100..900&display=swap");
+
 @import "tailwindcss";
 @import "./styles/rich-content";
 
@@ -25,6 +27,11 @@
   --peach: #f2b99a;
 }
 
+@theme {
+  --font-condensed: "Roboto Condensed", sans-serif;
+  --font-orbitron: "Orbitron", sans-serif;
+}
+
 @theme inline {
   --color-primary: var(--primary);
   --color-background-dark: var(--background-dark);
@@ -44,13 +51,17 @@
 
   .rocket-gradient,
   .text-gradient {
-    background: linear-gradient(135deg, #dc2626 0%, #ea580c 50%, #d97706 100%);
+    background: linear-gradient(135deg, #dc2626 0%, #ea580c 100%);
   }
 
   .text-gradient {
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  .border-rocket {
+    border-image: linear-gradient(135deg, #dc2626 0%, #ea580c 100%) 1;
   }
 }
 

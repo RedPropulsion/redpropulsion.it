@@ -1,5 +1,5 @@
 import { ArrowDown } from "lucide-react";
-import RichText from "@/components/RichText";
+import Button from "@/components/Button";
 
 function Stars() {
   return (
@@ -29,15 +29,20 @@ export default function Landing({ title, subtitle }: Props) {
   return (
     <div className="h-dvh flex flex-col items-center justify-center relative">
       <Stars />
-      <div className="z-10 text-center">
-        <h1 className="text-5xl md:text-8xl w-min font-bold uppercase text-gradient mb-4 mx-auto">
+      <div className="mt-auto z-10 text-center mx-4">
+        <h1 className="text-6xl sm:text-8xl md:text-9xl font-condensed font-bold uppercase text-gradient mx-auto">
           {title}
         </h1>
-        <div className="bigger-rich">
-          <RichText content={subtitle} />
-        </div>
+        <p className="font-orbitron text-4xl sm:text-5xl md:text-6xl">
+          {subtitle}
+        </p>
       </div>
-      <ArrowDown className="mt-12 text-primary w-[50px] h-[50px] animate-bounce" />
+
+      <div className="mt-auto z-10 grid sm:grid-cols-2 justify-center gap-4 sm:gap-12">
+        <Button title={"Join now"} primary />
+        <Button title={"Explore"} />
+      </div>
+      <ArrowDown className="mt-12 mb-auto text-primary w-[50px] h-[50px] animate-bounce" />
       <div className="absolute bottom-0 left-0 right-0 h-[200px] mask-t-from-0 bg-background-dark" />
     </div>
   );

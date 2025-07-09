@@ -3,7 +3,7 @@
   "description": "Sito web dell'associazione studentesca Red Propulsion dell'Università di Firenze!",
   "landing": {
     "title": "Red Propulsion",
-    "subtitle": "Push the limits!\n\n_Progettiamo, costruiamo e testiamo razzi sonda!_"
+    "subtitle": "Push the limits!"
   },
   "sections": [
     {
@@ -13,3 +13,4 @@
     }
   ]
 }
+
