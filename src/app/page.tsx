@@ -1,6 +1,7 @@
 import Block, { validateBlockContent } from "@/components/Block";
 import Landing from "@/components/Landing";
 import Sponsors from "@/components/Sponsors";
+import Stats from "@/components/Stats";
 
 import Content from "@/content/index_page.json";
 
@@ -20,6 +21,7 @@ export default function Home() {
         validateBlockContent(content);
         return <Block content={content} key={i} />;
       })}
+      <Stats statistics={Content.statistics} />
     </>
   );
 }

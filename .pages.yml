@@ -26,6 +26,17 @@ content:
                 label: Cards
                 component: card
                 list: true
+      - name: statistics
+        label: Statistics
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Name
+            type: string
+          - name: value
+            label: Value
+            type: string
   - name: footer
     label: Footer
     type: file
