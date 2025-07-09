@@ -1,5 +1,5 @@
 import { ArrowDown } from "lucide-react";
-import Button from "@/components/Button";
+import Button, { ButtonProps } from "@/components/Button";
 
 function Stars() {
   return (
@@ -23,9 +23,10 @@ function Stars() {
 type Props = {
   title: string;
   subtitle: string;
+  buttons: ButtonProps[];
 };
 
-export default function Landing({ title, subtitle }: Props) {
+export default function Landing({ title, subtitle, buttons }: Props) {
   return (
     <div className="h-dvh flex flex-col items-center justify-center relative">
       <Stars />
@@ -39,8 +40,9 @@ export default function Landing({ title, subtitle }: Props) {
       </div>
 
       <div className="mt-auto z-10 grid sm:grid-cols-2 justify-center gap-4 sm:gap-12">
-        <Button title={"Join now"} primary />
-        <Button title={"Explore"} />
+        {buttons.map((item, i) => (
+          <Button key={i} {...item} />
+        ))}
       </div>
       <ArrowDown className="mt-12 mb-auto text-primary w-[50px] h-[50px] animate-bounce" />
       <div className="absolute bottom-0 left-0 right-0 h-[200px] mask-t-from-0 bg-background-dark" />

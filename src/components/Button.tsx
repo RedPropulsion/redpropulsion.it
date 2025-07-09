@@ -1,10 +1,10 @@
-type Props = {
+export type ButtonProps = {
   title: string;
   url?: string;
   primary?: boolean;
 };
 
-export default function Button({ title, url, primary }: Props) {
+export default function Button({ title, url, primary }: ButtonProps) {
   return (
     <a href={url}>
       <div

@@ -80,6 +80,12 @@ components:
       - name: subtitle
         label: Subtitle
         type: rich-text
+      - name: buttons
+        label: Buttons
+        component: button
+        list:
+          min: 1
+          max: 2
   section:
     label: Section
     fields:

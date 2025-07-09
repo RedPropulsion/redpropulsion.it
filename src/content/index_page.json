@@ -3,7 +3,19 @@
   "description": "Sito web dell'associazione studentesca Red Propulsion dell'Università di Firenze!",
   "landing": {
     "title": "Red Propulsion",
-    "subtitle": "Push the limits!"
+    "subtitle": "Push the limits!",
+    "buttons": [
+      {
+        "title": "Join Now",
+        "url": "bit.ly/candidaturaRedPropulsion",
+        "primary": true
+      },
+      {
+        "title": "Explore",
+        "url": "/",
+        "primary": false
+      }
+    ]
   },
   "sections": [
     {
@@ -13,4 +25,3 @@
     }
   ]
 }
-
