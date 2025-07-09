@@ -1,6 +1,7 @@
 import Content from "@/content/sponsors_page.json";
 import Navbar from "@/components/Navbar";
 import Block, { validateBlockContent } from "@/components/Block";
+import UnderConstruction from "@/components/UnderConstruction";
 
 export function generateMetadata() {
   return {
@@ -10,9 +11,13 @@ export function generateMetadata() {
 }
 
 export default function Page() {
+  if (Content.sections.length === 0) {
+    return UnderConstruction();
+  }
+
   return (
     <>
-      <Navbar alwaysShow />
+      <Navbar alwaysShow={true} />
       <div
         style={{
           height: "100px",
