@@ -4,7 +4,7 @@ type Props = {
 
 export default function Stats({ statistics }: Props) {
   return (
-    <div className="flex justify-evenly my-8 text-center flex-wrap gap-4">
+    <div className="flex justify-evenly mt-16 mb-8 text-center flex-wrap gap-4">
       {statistics.map((item, i) => (
         <div key={i} className="w-1/3 md:w-fit">
           <h2 className="font-condensed text-gradient text-4xl md:text-6xl font-bold">
