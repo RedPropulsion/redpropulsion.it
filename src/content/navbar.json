@@ -3,19 +3,19 @@
   "links": [
     {
       "title": "Progetti",
-      "link": "/"
+      "url": "/"
     },
     {
       "title": "Dipartimenti",
-      "link": "/"
+      "url": "/"
     },
     {
       "title": "Sponsors",
-      "link": "/"
+      "url": "/"
     },
     {
       "title": "Contattaci",
-      "link": "/"
+      "url": "/"
     }
   ]
 }

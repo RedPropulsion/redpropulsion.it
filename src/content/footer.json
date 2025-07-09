@@ -4,12 +4,12 @@
   "social_links": [
     {
       "name": "Github",
-      "link": "https://github.com/RedPropulsion",
+      "url": "https://github.com/RedPropulsion",
       "icon": "/github-logo-white.png"
     },
     {
       "name": "Instagram",
-      "link": "https://www.instagram.com/red_propulsion/",
+      "url": "https://www.instagram.com/red_propulsion/",
       "icon": "/instagram-logo-white.png"
     }
   ]

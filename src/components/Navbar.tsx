@@ -16,30 +16,6 @@ export default function Navbar({ alwaysShow }: Props) {
 
   return (
     <ShowOnScroll active={!alwaysShow}>
-      {/* <div className="fixed w-full p-4 bg-background-dark z-100 flex flex-col md:flex-row"> */}
-      {/*   <Link href="/"> */}
-      {/*     <h1 className="text-white font-condensed font-bold mr-8 text-3xl hover:underline"> */}
-      {/*       {Content.title} */}
-      {/*     </h1> */}
-      {/*   </Link> */}
-      {/*   <AlignJustify */}
-      {/*     className="text-primary ml-auto my-auto w-[30px] h-[30px] md:hidden absolute right-4" */}
-      {/*     onClick={() => setMenuOpen(!menuOpen)} */}
-      {/*   /> */}
-      {/*   <div */}
-      {/*     className={`align-center gap-8 my-auto flex-col md:flex-row flex transition-transform ease-in-out duration-300 transform ${menuOpen ? "translate-y-0" : "-translate-y-full"} -z-1`} */}
-      {/*   > */}
-      {/*     {Content.links.map((item, i) => ( */}
-      {/*       <a */}
-      {/*         key={i} */}
-      {/*         href={item.link} */}
-      {/*         className="text-foreground-dim hover:underline font-condensed text-2xl" */}
-      {/*       > */}
-      {/*         {item.title} */}
-      {/*       </a> */}
-      {/*     ))} */}
-      {/*   </div> */}
-      {/* </div> */}
       <div className="fixed w-full p-4 bg-background-dark z-20 flex items-center justify-between">
         {/* Contenitore per Titolo e Link Desktop */}
         <div className="flex items-center gap-8">
@@ -53,7 +29,7 @@ export default function Navbar({ alwaysShow }: Props) {
             {Content.links.map((item, i) => (
               <a
                 key={i}
-                href={item.link}
+                href={item.url}
                 className="text-foreground-dim hover:underline font-condensed text-2xl"
               >
                 {item.title}
@@ -76,7 +52,7 @@ export default function Navbar({ alwaysShow }: Props) {
           {Content.links.map((item, i) => (
             <a
               key={i}
-              href={item.link}
+              href={item.url}
               className="text-foreground-dim hover:underline font-condensed text-2xl"
               onClick={() => setMenuOpen(false)} // Optional: chiude il menu al click
             >

@@ -33,7 +33,7 @@ content:
     fields:
       - { name: title, label: Title, type: string, required: true }
       - { name: body, label: Body, type: rich-text }
-      - { name: social_links, label: Social Links, component: social_links, list: true }
+      - { name: social_links, label: Social Links, component: social_link, list: true }
   - name: navbar
     label: Navbar
     type: file
@@ -89,17 +89,17 @@ components:
       - name: body
         label: Section content
         type: rich-text
-  social_links:
+  social_link:
     label: Social Link
     fields:
       - name: name
         label: Name
         type: string
-      - name: link
-        label: Link
+      - name: url
+        label: Url
         type: string
       - name: icon
-        label: Link Icon
+        label: Social Icon
         type: image
   button:
     label: Button
@@ -107,8 +107,8 @@ components:
       - name: title
         label: Title
         type: string
-      - name: link
-        label: Link
+      - name: url
+        label: Url
         type: string
   card:
     label: Card
