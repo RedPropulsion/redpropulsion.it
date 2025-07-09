@@ -98,6 +98,29 @@ content:
                 label: Cards
                 component: card
                 list: true
+  - name: dipartimenti_page
+    label: Dipartimenti page
+    type: file
+    path: src/content/dipartimenti_page.json
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: description, label: Description, type: string, options: { maxLength: 100 } }
+      - name: sections
+        label: Sections
+        type: block
+        blockKey: type
+        list: true
+        blocks:
+          - name: text_section
+            label: Text Section
+            component: section
+          - name: cards_section
+            label: Cards Section
+            fields:
+              - name: cards
+                label: Cards
+                component: card
+                list: true
   - name: sponsors
     label: Sponsors List
     type: file
