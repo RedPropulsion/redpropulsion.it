@@ -40,7 +40,7 @@ content:
     path: src/content/navbar.json
     fields:
       - { name: title, label: Title, type: string, required: true }
-      - { name: links, label: Links, component: button, list: true }
+      - { name: links, label: Links, component: link, list: true }
   - name: sponsors_page
     label: Sponsors page
     type: file
@@ -103,6 +103,19 @@ components:
         type: image
   button:
     label: Button
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: url
+        label: Url
+        type: string
+      - name: primary
+        label: Primary
+        type: boolean
+        default: false
+  link:
+    label: Link
     fields:
       - name: title
         label: Title
