@@ -1,16 +1,22 @@
 {
   "sponsors": [
     {
-      "name": "Sponsor 1",
-      "image": null,
-      "description": "Our wonderful sponsor 1",
-      "url": ""
+      "name": "Altium",
+      "image": "/Altium_Logo_WHT.png",
+      "url": "https://www.altium.com/",
+      "description": "Altium Designer ci aiuta fornendoci il software che usiamo per progettare le nostre schede di controllo"
     },
     {
-      "name": "Sponsor 2",
-      "image": null,
-      "description": "Our fabulous sponsor 2",
-      "url": ""
+      "name": "Solidworks",
+      "image": "/SolidWorks-logo.png",
+      "url": "https://www.solidworks.com/",
+      "description": "Solidworks ci aiuta fornendoci il software CAD fondamentale per progettare tutte le componenti dei nostri razzi!"
+    },
+    {
+      "name": "Molex",
+      "image": "/Molex-Logo.svg",
+      "url": "https://www.molex.com/",
+      "description": "Molex ci aiuta fornendoci i connettori di qualità per garantire la comunicazione e l'interconnessione di tutti i sottosistemi elettronici e sensoristici del razzo"
     }
   ]
 }
