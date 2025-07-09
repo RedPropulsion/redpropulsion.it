@@ -2,11 +2,11 @@
 
 @layer components {
   .rich-text {
-    --font-size-paragraph: theme("fontSize.base");
+    --font-size-paragraph: theme("fontSize.xl");
 
     p {
       font-size: var(--font-size-paragraph);
-      @apply mb-8 leading-6;
+      @apply mb-8 leading-6 font-condensed leading-7;
     }
 
     em {

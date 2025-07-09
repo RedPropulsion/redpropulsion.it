@@ -3,15 +3,5 @@ type Props = {
 };
 
 export default function Bounded({ children }: Props) {
-  return (
-    <div
-      style={{
-        maxWidth: "600px",
-        padding: "2rem",
-        marginInline: "auto",
-      }}
-    >
-      {children}
-    </div>
-  );
+  return <div className="max-w-[800px] p-8 mx-auto">{children}</div>;
 }

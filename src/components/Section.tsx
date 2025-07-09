@@ -9,7 +9,7 @@ type Props = {
 export default function Section({ title, body }: Props) {
   return (
     <Bounded>
-      <h2 className="text-gradient text-4xl font-bold text-center mb-6">
+      <h2 className="text-gradient text-4xl font-condensed font-bold text-center mb-6">
         {title}
       </h2>
       <RichText content={body} />
