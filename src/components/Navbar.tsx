@@ -5,17 +5,15 @@ import ShowOnScroll from "@/components/ShowOnScroll";
 import Content from "@/content/navbar.json";
 import { AlignJustify } from "lucide-react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
-type Props = {
-  alwaysShow?: boolean;
-};
-
-export default function Navbar({ alwaysShow }: Props) {
+export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const showOnScrollActive = usePathname() === "/";
 
   return (
-    <ShowOnScroll active={!alwaysShow}>
+    <ShowOnScroll active={showOnScrollActive}>
       <div className="fixed w-full p-4 bg-background-dark z-20 flex items-center justify-between">
         {/* Contenitore per Titolo e Link Desktop */}
         <div className="flex items-center gap-8">

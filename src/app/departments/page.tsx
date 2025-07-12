@@ -1,5 +1,4 @@
 import Content from "@/content/departments_page.json";
-import Navbar from "@/components/Navbar";
 import Block, { validateBlockContent } from "@/components/Block";
 import UnderConstruction from "@/components/UnderConstruction";
 
@@ -17,7 +16,6 @@ export default function Page() {
 
   return (
     <>
-      <Navbar alwaysShow={true} />
       <div
         style={{
           height: "100px",
