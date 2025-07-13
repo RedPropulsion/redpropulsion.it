@@ -75,10 +75,10 @@ content:
                 label: Cards
                 component: card
                 list: true
-  - name: progetti_page
-    label: Progetti page
+  - name: projects_page
+    label: Projects page
     type: file
-    path: src/content/progetti_page.json
+    path: src/content/projects_page.json
     fields:
       - { name: title, label: Title, type: string, required: true }
       - { name: description, label: Description, type: string, options: { maxLength: 100 } }
@@ -98,10 +98,10 @@ content:
                 label: Cards
                 component: card
                 list: true
-  - name: dipartimenti_page
-    label: Dipartimenti page
+  - name: departments_page
+    label: Departments page
     type: file
-    path: src/content/dipartimenti_page.json
+    path: src/content/departments_page.json
     fields:
       - { name: title, label: Title, type: string, required: true }
       - { name: description, label: Description, type: string, options: { maxLength: 100 } }
