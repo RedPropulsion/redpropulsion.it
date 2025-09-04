@@ -1,6 +1,6 @@
 {
   "title": "Red Propulsion",
-  "body": "_Dipartimento di Ingegneria Industriale_\nUniversità di Firenze\nEmail: [info@redpropulsion.it](mailto:info@redpropulsion.it)",
+  "body": "Laboratorio didattico presso _Dipartimento di Ingegneria Industriale_ (DIEF) e _Dipartimento di Ingegneria dell'Informazione_ (DINFO) Università di Firenze\n\nEmail: [info@redpropulsion.it](mailto:info@redpropulsion.it)",
   "social_links": [
     {
       "name": "Github",
@@ -11,6 +11,11 @@
       "name": "Instagram",
       "url": "https://www.instagram.com/red_propulsion/",
       "icon": "/instagram-logo-white.png"
+    },
+    {
+      "name": "Linkedin",
+      "url": "https://www.linkedin.com/company/redpropulsion",
+      "icon": "/InBug-White.png"
     }
   ]
 }
