@@ -25,9 +25,21 @@
     }
   ],
   "statistics": [
-    { "name": "membri", "value": "40+" },
-    { "name": "dipartimenti", "value": "3" },
-    { "name": "ultimo lancio", "value": "Nov '24" },
-    { "name": "lanci riusciti", "value": "10" }
+    {
+      "name": "membri",
+      "value": "40+"
+    },
+    {
+      "name": "dipartimenti",
+      "value": "3"
+    },
+    {
+      "name": "ultimo lancio",
+      "value": "Nov '24"
+    },
+    {
+      "name": "lanci riusciti",
+      "value": "3"
+    }
   ]
 }
