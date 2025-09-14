@@ -1,0 +1,40 @@
+{
+  "faq": [
+    {
+      "question": "What is Red Propulsion?",
+      "answer": "Red Propulsion is the official student rocketry team of the University of Florence (Università degli Studi di Firenze). We are a group of passionate students who design, build, and launch high-power rockets to compete in international competitions, pushing the boundaries of student-led aerospace engineering."
+    },
+    {
+      "question": "Do I need to be an engineering student to join?",
+      "answer": "Not at all! While many of our members study engineering, we welcome students from all degree programs. Building a rocket requires a wide range of skills. We have roles in management, marketing, finance, and communications, in addition to our technical departments like Propulsion, Avionics, and Structures. Passion for space and technology is the only real prerequisite."
+    },
+    {
+      "question": "I have no experience with rockets. Can I still apply?",
+      "answer": "Absolutely! We believe in learning by doing. We are looking for motivated individuals who are eager to learn and contribute. We provide internal training and mentorship to get new members up to speed. Your enthusiasm is more important than your experience."
+    },
+    {
+      "question": "What kind of skills are you looking for?",
+      "answer": "We need a diverse set of skills! On the technical side, experience with CAD software (e.g., SolidWorks, Fusion 360), programming (C++, Python), electronics (PCB design), or simulation software (CFD, FEA) is a plus. For non-technical roles, we look for skills in project management, graphic design, social media management, public speaking, and fundraising. If you're a team player and a problem-solver, you'll fit right in."
+    },
+    {
+      "question": "How much of a time commitment is required?",
+      "answer": "The time commitment can vary depending on the project cycle and your specific role. On average, members dedicate a few hours per week. This increases during critical phases like manufacturing or before a competition. We are all students, so we understand the importance of balancing team activities with academic responsibilities."
+    },
+    {
+      "question": "What are the different sub-teams within Red Propulsion?",
+      "answer": "Our team is structured into several specialized sub-teams, including: \n • Propulsion: Designing and testing the rocket motor. \n • Structures & Aerodynamics: Designing the physical body of the rocket to be both lightweight and resilient. \n • Avionics: Developing the rocket's electronic systems for data acquisition and control. \n • Recovery: Ensuring the rocket can be safely recovered after launch using parachutes. \n • Management & Marketing: Handling project planning, sponsorships, and team promotion."
+    },
+    {
+      "question": "How do I join the team?",
+      "answer": "We typically open recruitment at the beginning of the academic year, around September and October. Keep an eye on the 'Join Us' section of our website and follow our social media channels for announcements. The application process usually involves filling out a form and may be followed by an interview."
+    },
+    {
+      "question": "What are the benefits of joining?",
+      "answer": "Joining Red Propulsion is a unique opportunity to gain hands-on experience in a real-world engineering project. You will develop valuable technical and soft skills, work with state-of-the-art technology, network with professionals in the aerospace industry, and be part of an amazing community. It's an incredible addition to your CV and a lot of fun!"
+    },
+    {
+      "question": "Can I get academic credits (CFU) for my participation?",
+      "answer": "In some cases, participation in the team can be recognized for academic credits ($CFU$). This depends on your specific degree program and its regulations regarding extracurricular activities. We can provide documentation of your involvement for you to discuss with your department's administration."
+    }
+  ]
+}

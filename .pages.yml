@@ -150,6 +150,12 @@ content:
     path: src/content/sponsors.json
     fields:
       - { name: sponsors, label: Sponsors, component: sponsor, list: true }
+  - name: faq
+    label: FAQ
+    type: file
+    path: src/content/faq.json
+    fields:
+      - { name: faq, label: FAQ, component: question, list: true }
 components:
   landing:
     label: Landing Section
@@ -236,3 +242,12 @@ components:
       - name: description
         label: description
         type: string
+  question:
+    label: Question
+    fields:
+      - name: question
+        label: Question
+        type: string
+      - name: answer
+        label: Answeru
+        type: rich-text
