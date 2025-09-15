@@ -1,40 +1,40 @@
 {
   "faq": [
     {
-      "question": "What is Red Propulsion?",
-      "answer": "Red Propulsion is the official student rocketry team of the University of Florence (Università degli Studi di Firenze). We are a group of passionate students who design, build, and launch high-power rockets to compete in international competitions, pushing the boundaries of student-led aerospace engineering."
+      "question": "Che cos’è Red Propulsion?",
+      "answer": "Red Propulsion è il team ufficiale di razzi studenteschi dell’Università degli Studi di Firenze. Siamo un gruppo di studenti appassionati che progettano, costruiscono e lanciano razzi ad alta potenza per partecipare a competizioni internazionali, spingendo sempre più avanti i confini dell’ingegneria aerospaziale a livello universitario."
     },
     {
-      "question": "Do I need to be an engineering student to join?",
-      "answer": "Not at all! While many of our members study engineering, we welcome students from all degree programs. Building a rocket requires a wide range of skills. We have roles in management, marketing, finance, and communications, in addition to our technical departments like Propulsion, Avionics, and Structures. Passion for space and technology is the only real prerequisite."
+      "question": "Devo essere uno studente di ingegneria per unirmi al team?",
+      "answer": "Assolutamente no! Anche se molti dei nostri membri studiano ingegneria, accogliamo studenti di qualsiasi percorso di studi. La costruzione di un razzo richiede competenze molto varie. Oltre ai reparti tecnici come Propulsione, Avionica e Strutture, abbiamo ruoli in gestione, marketing, finanza e comunicazione. L’unico vero requisito è la passione per lo spazio e la tecnologia."
     },
     {
-      "question": "I have no experience with rockets. Can I still apply?",
-      "answer": "Absolutely! We believe in learning by doing. We are looking for motivated individuals who are eager to learn and contribute. We provide internal training and mentorship to get new members up to speed. Your enthusiasm is more important than your experience."
+      "question": "Non ho esperienza con i razzi. Posso comunque candidarmi?",
+      "answer": "Certo! Crediamo fortemente nell’imparare facendo. Cerchiamo persone motivate, curiose e pronte a mettersi in gioco. Forniamo formazione interna e affiancamento per aiutare i nuovi membri a inserirsi rapidamente. L’entusiasmo conta più dell’esperienza pregressa."
     },
     {
-      "question": "What kind of skills are you looking for?",
-      "answer": "We need a diverse set of skills! On the technical side, experience with CAD software (e.g., SolidWorks, Fusion 360), programming (C++, Python), electronics (PCB design), or simulation software (CFD, FEA) is a plus. For non-technical roles, we look for skills in project management, graphic design, social media management, public speaking, and fundraising. If you're a team player and a problem-solver, you'll fit right in."
+      "question": "Quali competenze cercate nei nuovi membri?",
+      "answer": "Abbiamo bisogno di un’ampia varietà di competenze! Sul lato tecnico, sono apprezzate esperienze con software CAD (ad es. SolidWorks, Fusion 360), programmazione (C++, Python), elettronica (progettazione PCB) o software di simulazione (CFD, FEA). Per i ruoli non tecnici, cerchiamo abilità in project management, grafica, gestione social media, public speaking e fundraising. Se sei una persona collaborativa e capace di risolvere problemi, sei nel posto giusto."
     },
     {
-      "question": "How much of a time commitment is required?",
-      "answer": "The time commitment can vary depending on the project cycle and your specific role. On average, members dedicate a few hours per week. This increases during critical phases like manufacturing or before a competition. We are all students, so we understand the importance of balancing team activities with academic responsibilities."
+      "question": "Quanto tempo devo dedicare al team?",
+      "answer": "Il tempo richiesto varia a seconda del periodo del progetto e del ruolo che ricopri. In media, i membri dedicano alcune ore alla settimana, con un impegno maggiore nelle fasi cruciali, come la produzione o prima di una competizione. Siamo tutti studenti, quindi comprendiamo bene l’importanza di bilanciare l’attività nel team con gli impegni universitari."
     },
     {
-      "question": "What are the different sub-teams within Red Propulsion?",
-      "answer": "Our team is structured into several specialized sub-teams, including: \n • Propulsion: Designing and testing the rocket motor. \n • Structures & Aerodynamics: Designing the physical body of the rocket to be both lightweight and resilient. \n • Avionics: Developing the rocket's electronic systems for data acquisition and control. \n • Recovery: Ensuring the rocket can be safely recovered after launch using parachutes. \n • Management & Marketing: Handling project planning, sponsorships, and team promotion."
+      "question": "Quali sono i sottogruppi all’interno di Red Propulsion?",
+      "answer": "Il nostro team è organizzato in vari sottogruppi specializzati, tra cui: \n • Propulsione: progettazione e test del motore del razzo. \n • Strutture e Aerodinamica: progettazione del corpo del razzo, leggero ma resistente. \n • Avionica: sviluppo dei sistemi elettronici di bordo per acquisizione dati e controllo. \n • Recovery: progettazione dei sistemi di recupero sicuro tramite paracadute. \n • Gestione e Marketing: pianificazione dei progetti, ricerca sponsor e promozione del team."
     },
     {
-      "question": "How do I join the team?",
-      "answer": "We typically open recruitment at the beginning of the academic year, around September and October. Keep an eye on the 'Join Us' section of our website and follow our social media channels for announcements. The application process usually involves filling out a form and may be followed by an interview."
+      "question": "Come posso entrare a far parte del team?",
+      "answer": "Solitamente apriamo le candidature all’inizio dell’anno accademico, tra settembre e ottobre. Ti consigliamo di seguire la sezione “Join Us” del nostro sito e i nostri canali social per rimanere aggiornato. La selezione prevede la compilazione di un modulo e, in alcuni casi, un colloquio."
     },
     {
-      "question": "What are the benefits of joining?",
-      "answer": "Joining Red Propulsion is a unique opportunity to gain hands-on experience in a real-world engineering project. You will develop valuable technical and soft skills, work with state-of-the-art technology, network with professionals in the aerospace industry, and be part of an amazing community. It's an incredible addition to your CV and a lot of fun!"
+      "question": "Quali sono i vantaggi di far parte del team?",
+      "answer": "Entrare in Red Propulsion è un’opportunità unica per fare esperienza concreta in un progetto di ingegneria reale. Potrai sviluppare competenze tecniche e trasversali, lavorare con tecnologie all’avanguardia, creare contatti con professionisti del settore aerospaziale e far parte di una comunità straordinaria. È un arricchimento prezioso per il tuo curriculum, oltre che un’esperienza entusiasmante."
     },
     {
-      "question": "Can I get academic credits (CFU) for my participation?",
-      "answer": "In some cases, participation in the team can be recognized for academic credits ($CFU$). This depends on your specific degree program and its regulations regarding extracurricular activities. We can provide documentation of your involvement for you to discuss with your department's administration."
+      "question": "Posso ottenere crediti formativi (CFU) grazie alla mia partecipazione?",
+      "answer": "In alcuni casi, la partecipazione al team può essere riconosciuta con l’assegnazione di crediti formativi (CFU). Questo dipende dal tuo corso di laurea e dalle regole del tuo dipartimento sulle attività extracurriculari. Possiamo fornirti la documentazione necessaria per discuterne con la segreteria didattica."
     }
   ]
 }
