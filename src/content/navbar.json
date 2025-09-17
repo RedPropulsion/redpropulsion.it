@@ -2,20 +2,12 @@
   "title": "Red Propulsion",
   "links": [
     {
-      "title": "Progetti",
-      "url": "/projects"
+      "title": "FAQ",
+      "url": "/faq"
     },
     {
-      "title": "Dipartimenti",
-      "url": "/departments"
-    },
-    {
-      "title": "Sponsors",
-      "url": "/sponsors"
-    },
-    {
-      "title": "Contattaci",
-      "url": "/contacts"
+      "title": "Join Us",
+      "url": "https://bit.ly/candidaturaRedPropulsion"
     }
   ]
 }
