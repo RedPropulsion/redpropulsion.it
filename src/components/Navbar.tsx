@@ -44,7 +44,7 @@ export default function Navbar() {
 
         {/* Menu a Tendina per Mobile */}
         <div
-          className={`absolute top-full left-0 w-full bg-background-dark px-4 pb-4 flex flex-col items-center gap-4 md:hidden transition-transform duration-400 ease-in-out transform -z-1 border-b-2 border-primary ${menuOpen ? "translate-y-0" : "-translate-y-3/2"}
+          className={`absolute top-full left-0 w-full bg-background-dark px-4 pb-4 flex flex-col items-center gap-4 md:hidden transition-transform duration-400 ease-in-out transform -z-1 border-primary ${menuOpen ? "translate-y-0" : "-translate-y-3/2"}
         `}
         >
           {Content.links.map((item, i) => (
