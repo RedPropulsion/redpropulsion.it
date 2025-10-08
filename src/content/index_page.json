@@ -12,7 +12,7 @@
       },
       {
         "title": "Explore",
-        "url": "/",
+        "url": "scroll",
         "primary": false
       }
     ]
