@@ -6,8 +6,8 @@
     "subtitle": "Push the limits!",
     "buttons": [
       {
-        "title": "Join Now",
-        "url": "https://docs.google.com/forms/d/1sIzkTDGcxqTCVYz5MwnyDTp8iZNU48iQFo36vzvbGBg/",
+        "title": "Join Us!",
+        "url": "https://docs.google.com/forms/d/e/1FAIpQLSejUL7liv6tDJIEc3VI05RWJ8ffPuupbaI3YPvPh_wZ1WvAqw/viewform?usp=dialog",
         "primary": true
       },
       {
@@ -31,7 +31,7 @@
     },
     {
       "name": "dipartimenti",
-      "value": "3"
+      "value": "6"
     },
     {
       "name": "ultimo lancio",
