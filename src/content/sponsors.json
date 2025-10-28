@@ -17,6 +17,12 @@
       "image": "/Molex-Logo.svg",
       "url": "https://www.molex.com/",
       "description": "Molex ci aiuta fornendoci i connettori di qualità per garantire la comunicazione e l'interconnessione di tutti i sottosistemi elettronici e sensoristici del razzo"
+    },
+    {
+      "name": "Alhof",
+      "image": "/logo-alhof-b-1.png",
+      "url": "https://www.alhof.com/",
+      "description": "Alhof ci aiuta fornendoci cablaggi di altissima qualità per garantire alta affidabilità nelle interconnessioni a RF tra il nostro sistema di telecomunicazioni e le antenne"
     }
   ]
 }
