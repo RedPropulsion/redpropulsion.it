@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './TeamCard.module.css';
+import Image from 'next/image';
 
 interface TeamCardProps {
   firstName: string;
@@ -17,7 +18,16 @@ export default function TeamCard({ firstName, lastName, role, linkedin, imgSrc, 
   return (
     <div className={`${styles.card} ${isHead ? styles.cardHead : ''}`}>
       <div style={{ position: 'relative', width: '100%', overflow: 'hidden' }}>
-        <img src={src} alt={`${fullName} photo`} className={styles.avatar} />
+        <div style={{ position: 'relative', width: '100%', height: '100%' }}>
+          <Image
+            src={String(src)}
+            alt={`${fullName} photo`}
+            height={280}
+            width={280}
+            className={styles.avatar}
+            priority={Boolean(isHead)}
+          />
+        </div>
         <div style={{
           position: 'absolute',
           bottom: 0,
