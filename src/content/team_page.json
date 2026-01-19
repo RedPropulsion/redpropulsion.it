@@ -1,0 +1,403 @@
+{
+    "title": "Our Team",
+    "description": "Meet the talented people behind Red Propulsion.",
+    "banner": {
+        "title": "Our Team",
+        "description": "Meet the talented people behind Red Propulsion.",
+        "backgroundImage": "/foto.jpeg"
+    },
+    "departments": [
+        {
+            "title": "Avionics — Electronics",
+            "members": [
+                {
+                    "firstName": "Antonio Enrique",
+                    "lastName": "Signorino",
+                    "role": "Electronics",
+                    "linkedin": "aes",
+                    "imgAvail": true,
+                    "isHead": true
+                },
+                {
+                    "firstName": "Martina",
+                    "lastName": "Bernardoni",
+                    "role": "Electronics",
+                    "linkedin": "gr",
+                    "imgAvail": false,
+                    "isHead": false
+                },
+                {
+                    "firstName": "Francesco",
+                    "lastName": "Sergio",
+                    "role": "Electronics",
+                    "linkedin": "lf",
+                    "imgAvail": false,
+                    "isHead": false
+                },
+                {
+                    "firstName": "Alessio",
+                    "lastName": "Geltrude",
+                    "role": "Electronics",
+                    "linkedin": "eg",
+                    "imgAvail": false,
+                    "isHead": false
+                },
+                {
+                    "firstName": "Ana",
+                    "lastName": "Burladean",
+                    "role": "Electronics",
+                    "linkedin": "mc",
+                    "imgAvail": false,
+                    "isHead": false
+                },
+                {
+                    "firstName": "Badr",
+                    "lastName": "Zouhir",
+                    "role": "Electronics",
+                    "linkedin": "mc",
+                    "imgAvail": false,
+                    "isHead": false
+                },
+                {
+                    "firstName": "Margherita",
+                    "lastName": "Signorini",
+                    "role": "Electronics",
+                    "linkedin": "mc",
+                    "imgAvail": false,
+                    "isHead": false
+                },
+                {
+                    "firstName": "Tommaso",
+                    "lastName": "Barbieri",
+                    "role": "Electronics",
+                    "linkedin": "mc",
+                    "imgAvail": false,
+                    "isHead": false
+                },
+                {
+                    "firstName": "Tommaso",
+                    "lastName": "Vegni",
+                    "role": "Electronics",
+                    "linkedin": "sl",
+                    "imgAvail": false,
+                    "isHead": false
+                }
+            ]
+        },
+        {
+            "title": "Avionics — Software",
+            "members": [
+                {
+                    "firstName": "Matviy",
+                    "lastName": "Starodubtsev",
+                    "role": "Software",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": false
+                },
+                {
+                    "firstName": "Niccolò",
+                    "lastName": "Zeri",
+                    "role": "Software",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": false
+                },
+                {
+                    "firstName": "Simone",
+                    "lastName": "Paudice",
+                    "role": "Software",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": false
+                },
+                {
+                    "firstName": "Youssef",
+                    "lastName": "Gbouri",
+                    "role": "Software",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": false
+                },
+                {
+                    "firstName": "Lorenzo",
+                    "lastName": "Bellina",
+                    "role": "Software",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": true
+                }
+            ]
+        },
+        {
+            "title": "Avionics — Controls",
+            "members": [
+                {
+                    "firstName": "Leonardo",
+                    "lastName": "Benvenuti",
+                    "role": "GNC",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": true
+                },
+                {
+                    "firstName": "Diego",
+                    "lastName": "Francini",
+                    "role": "Controls",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": false
+                }
+            ]
+        },
+        {
+            "title": "Logistics",
+            "members": [
+                {
+                    "firstName": "Sabrina",
+                    "lastName": "Baldini",
+                    "role": "Management",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": true
+                },
+                {
+                    "firstName": "Camilla",
+                    "lastName": "Catelani",
+                    "role": "Management",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": true
+                },
+                {
+                    "firstName": "Lapo",
+                    "lastName": "Tinti",
+                    "role": "Logistics",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": false
+                }
+            ]
+        },
+        {
+            "title": "Structures",
+            "members": [
+                {
+                    "firstName": "Niccolò",
+                    "lastName": "Bertini",
+                    "role": "Structures",
+                    "linkedin": "",
+                    "imgAvail": true,
+                    "isHead": true
+                },
+                {
+                    "firstName": "Alberto",
+                    "lastName": "Di Tirro",
+                    "role": "Structures",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": false
+                },
+                {
+                    "firstName": "Daniele",
+                    "lastName": "Lupori",
+                    "role": "Structures",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": false
+                },
+                {
+                    "firstName": "Lapo",
+                    "lastName": "Baroncelli",
+                    "role": "Structures",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": false
+                },
+                {
+                    "firstName": "Michele",
+                    "lastName": "Bonti",
+                    "role": "Structures",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": false
+                },
+                {
+                    "firstName": "Riccardo",
+                    "lastName": "Fabbrucci",
+                    "role": "Structures",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": false
+                }
+            ]
+        },
+        {
+            "title": "Aerodinamica",
+            "members": [
+                {
+                    "firstName": "Filippo",
+                    "lastName": "Capra",
+                    "role": "Aerodynamics",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": true
+                },
+                {
+                    "firstName": "Aurora",
+                    "lastName": "Mattoni",
+                    "role": "Aerodynamics",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": false
+                },
+                {
+                    "firstName": "Ettore",
+                    "lastName": "Melodia",
+                    "role": "Aerodynamics",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": false
+                },
+                {
+                    "firstName": "Javier",
+                    "lastName": "D'Alessio",
+                    "role": "Aerodynamics",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": false
+                }
+            ]
+        },
+        {
+            "title": "Recupero",
+            "members": [
+                {
+                    "firstName": "Ahmed Massimo",
+                    "lastName": "Romdhani",
+                    "role": "Recovery",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": true
+                },
+                {
+                    "firstName": "Tommaso",
+                    "lastName": "Cirillo",
+                    "role": "Recovery",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": false
+                },
+                {
+                    "firstName": "Andrea",
+                    "lastName": "Dipalo",
+                    "role": "Recovery",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": false
+                },
+                {
+                    "firstName": "Flavio",
+                    "lastName": "Pieraccini",
+                    "role": "Recovery",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": false
+                },
+                {
+                    "firstName": "Matteo",
+                    "lastName": "Benedetti",
+                    "role": "Recovery",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": false
+                },
+                {
+                    "firstName": "Pietro",
+                    "lastName": "Gori",
+                    "role": "Recovery",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": false
+                }
+            ]
+        },
+        {
+            "title": "Hybrid Motor \"Lilium\"",
+            "members": [
+                {
+                    "firstName": "Davide",
+                    "lastName": "Petriella",
+                    "role": "Hybrid Motor",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": true
+                },
+                {
+                    "firstName": "Francesco",
+                    "lastName": "Brunetti",
+                    "role": "Hybrid Motor",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": false
+                },
+                {
+                    "firstName": "Rita",
+                    "lastName": "Ferri",
+                    "role": "Hybrid Motor",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": false
+                },
+                {
+                    "firstName": "Giada",
+                    "lastName": "Ferrara",
+                    "role": "Hybrid Motor",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": false
+                },
+                {
+                    "firstName": "Matteo",
+                    "lastName": "Durazzi",
+                    "role": "Hybrid Motor",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": false
+                },
+                {
+                    "firstName": "Noemi",
+                    "lastName": "Sbolci",
+                    "role": "Hybrid Motor",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": false
+                },
+                {
+                    "firstName": "Rosa",
+                    "lastName": "Cirillo",
+                    "role": "Hybrid Motor",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": false
+                },
+                {
+                    "firstName": "Caterina",
+                    "lastName": "Foggi",
+                    "role": "Hybrid Motor",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": false
+                },
+                {
+                    "firstName": "Francesco",
+                    "lastName": "Beraldi",
+                    "role": "Logistics",
+                    "linkedin": "",
+                    "imgAvail": false,
+                    "isHead": false
+                }
+            ]
+        }
+    ]
+}
