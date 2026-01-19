@@ -33,7 +33,16 @@ export default function TeamCard({ firstName, lastName, role, linkedin, imgSrc, 
         </div>
         {isHead && <div className={styles.badge}>{typeof isHead === 'string' ? isHead : 'Department Head'}</div>}
       </div>
-      {/* LinkedIn link removed */}
+      {linkedin && (
+        <a
+          href={linkedin}
+          target="_blank"
+          rel="noopener noreferrer"
+          className={`${styles.linkedin} ${styles.hidden}`}
+        >
+          LinkedIn
+        </a>
+      )}
     </div>
   );
 }
