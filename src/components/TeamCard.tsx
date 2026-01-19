@@ -7,11 +7,11 @@ interface TeamCardProps {
   role: string;
   linkedin?: string;
   imgSrc?: string;
-  isHead?: boolean;
+  isHead?: boolean | string;
 }
 
 export default function TeamCard({ firstName, lastName, role, linkedin, imgSrc, isHead }: TeamCardProps) {
-  const src = imgSrc ?? 'https://via.placeholder.com/240?text=Photo';
+  const src = imgSrc;
   const fullName = [firstName, lastName].filter(Boolean).join(' ').trim();
 
   return (
@@ -31,7 +31,7 @@ export default function TeamCard({ firstName, lastName, role, linkedin, imgSrc, 
           <div className={styles.name}>{fullName}</div>
           <div className={styles.role}>{role}</div>
         </div>
-        {isHead && <div className={styles.badge}>Department Head</div>}
+        {isHead && <div className={styles.badge}>{typeof isHead === 'string' ? isHead : 'Department Head'}</div>}
       </div>
       {/* LinkedIn link removed */}
     </div>

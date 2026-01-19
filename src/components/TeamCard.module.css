@@ -1,6 +1,12 @@
 .cardWrapper {
   width: 280px;
 }
+.boardSection {
+  margin: 40px 0;
+  padding: 32px 24px;
+  border-radius: 8px;
+  border: 2px solid #d97706;
+}
 .card {
   display: flex;
   flex-direction: column;

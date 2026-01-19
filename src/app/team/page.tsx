@@ -11,7 +11,8 @@ type Member = {
   role: string;
   linkedin?: string;
   imgAvail?: boolean;
-  isHead?: boolean;
+  isHead?: boolean | string;
+  boardRole?: string;
 };
 
 type Department = {
@@ -21,6 +22,9 @@ type Department = {
 };
 
 const departments: Department[] = teamData.departments;
+
+const boardMembers: Member[] = [...teamData.board.members, ...teamData.departments ? teamData.departments.flatMap(d => d.members.filter(m => m.boardRole)) : []];
+
 
 function surnameKey(m: Member) {
   return (m.lastName || m.firstName || '').trim().toLowerCase();
@@ -87,6 +91,32 @@ export default function TeamPage() {
         </div>
       </section>
       <div style={{ padding: '24px', maxWidth: '80vw', margin: '0 auto' }}>
+        {boardMembers.length > 0 && ( //FIXME: this section might be duplicate of the department generator below, consider change styling to justify its existence
+          <section className={styles.boardSection}>
+            <h2 className="text-gradient text-4xl font-condensed font-bold mb-6" style={{ marginTop: 0 }}>
+              {teamData.board.title}
+            </h2>
+            <div style={{
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'center',
+              gap: 16,
+            }}>
+              {boardMembers.map((m, idx) => ( // here we dont' order members by name
+                <div key={`${m.firstName}-${m.lastName ?? ''}-${idx}`} className={styles.cardWrapper}>
+                  <TeamCard
+                    firstName={m.firstName}
+                    lastName={m.lastName}
+                    role={m.role}
+                    linkedin={toLinkedIn(m.linkedin ?? `${m.firstName} ${m.lastName || ''}`)}
+                    imgSrc={m.imgAvail ? "/profilePictures/25-26/" + sanitizeFileName(m.firstName + m.lastName) + ".webp" : placeholder}
+                    isHead={m.boardRole}
+                  />
+                </div>
+              ))}
+            </div>
+          </section>
+        )}
         {departments.map((dept) => (
           <section key={dept.title} style={{ margin: '40px 0' }}>
             <h2 className="text-gradient text-4xl font-condensed font-bold mb-6">

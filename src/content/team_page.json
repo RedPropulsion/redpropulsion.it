@@ -6,6 +6,20 @@
         "description": "Meet the talented people behind Red Propulsion.",
         "backgroundImage": "/foto.jpeg"
     },
+    "board": {
+        "title": "Board",
+        "members": [
+            {
+                "firstName": "Niccolò Romeo",
+                "lastName": "Cocchi",
+                "role": "Team Leader (ex electronics)",
+                "linkedin":"",
+                "imgAvail": false,
+                "isHead": true,
+                "boardRole": "Team Lead"
+            }
+        ]
+    },
     "departments": [
         {
             "title": "Avionics — Electronics",
@@ -16,7 +30,8 @@
                     "role": "Electronics",
                     "linkedin": "aes",
                     "imgAvail": true,
-                    "isHead": true
+                    "isHead": true,
+                    "boardRole": "Avionics Lead"
                 },
                 {
                     "firstName": "Martina",
@@ -125,7 +140,8 @@
                     "role": "Software",
                     "linkedin": "",
                     "imgAvail": false,
-                    "isHead": true
+                    "isHead": true,
+                    "boardRole": "Software Lead"
                 }
             ]
         },
@@ -138,7 +154,8 @@
                     "role": "GNC",
                     "linkedin": "",
                     "imgAvail": false,
-                    "isHead": true
+                    "isHead": true,
+                    "boardRole": "GNC Lead"
                 },
                 {
                     "firstName": "Diego",
@@ -167,7 +184,8 @@
                     "role": "Management",
                     "linkedin": "",
                     "imgAvail": false,
-                    "isHead": true
+                    "isHead": true,
+                    "boardRole": "Logistics Lead"
                 },
                 {
                     "firstName": "Lapo",
@@ -188,7 +206,8 @@
                     "role": "Structures",
                     "linkedin": "",
                     "imgAvail": true,
-                    "isHead": true
+                    "isHead": true,
+                    "boardRole": "Structures Lead"
                 },
                 {
                     "firstName": "Alberto",
@@ -241,7 +260,8 @@
                     "role": "Aerodynamics",
                     "linkedin": "",
                     "imgAvail": false,
-                    "isHead": true
+                    "isHead": true,
+                    "boardRole": "Aerodynamics Lead"
                 },
                 {
                     "firstName": "Aurora",
@@ -278,7 +298,8 @@
                     "role": "Recovery",
                     "linkedin": "",
                     "imgAvail": false,
-                    "isHead": true
+                    "isHead": true,
+                    "boardRole": "Recovery Lead"
                 },
                 {
                     "firstName": "Tommaso",
@@ -331,7 +352,8 @@
                     "role": "Hybrid Motor",
                     "linkedin": "",
                     "imgAvail": false,
-                    "isHead": true
+                    "isHead": true,
+                    "boardRole": "Hybrid motor Lead"
                 },
                 {
                     "firstName": "Francesco",
