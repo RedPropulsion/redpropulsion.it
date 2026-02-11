@@ -144,6 +144,39 @@ content:
                 label: Cards
                 component: card
                 list: true
+  - name: team_page
+    label: Team page
+    type: file
+    path: src/content/team_page.json
+    fields:
+      - { name: title, label: Title, type: string, required: true }
+      - { name: description, label: Description, type: string, options: { maxLength: 160 } }
+      - name: banner
+        label: Banner
+        type: object
+        fields:
+          - { name: title, label: Title, type: string }
+          - { name: description, label: Description, type: string }
+          - { name: backgroundImage, label: Background Image, type: image }
+      - name: board
+        label: Board
+        type: object
+        fields:
+          - { name: title, label: Title, type: string }
+          - name: members
+            label: Members
+            component: member
+            list: true
+      - name: departments
+        label: Departments
+        type: object
+        list: true
+        fields:
+          - { name: title, label: Title, type: string }
+          - name: members
+            label: Members
+            component: member
+            list: true
   - name: sponsors
     label: Sponsors List
     type: file
@@ -251,3 +284,14 @@ components:
       - name: answer
         label: Answeru
         type: rich-text
+  member:
+    label: Member
+    fields:
+      - { name: firstName, label: First Name, type: string }
+      - { name: lastName, label: Last Name, type: string }
+      - { name: role, label: Role, type: string }
+      - { name: linkedin, label: Linkedin, type: string }
+      - { name: imgAvail, label: Image Available, type: boolean, default: false }
+      - { name: imgSrc, label: Image, type: image }
+      - { name: isHead, label: Is Head, type: boolean, default: false }
+      - { name: boardRole, label: Board Role, type: string }

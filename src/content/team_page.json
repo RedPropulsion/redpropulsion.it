@@ -10,10 +10,10 @@
         "title": "Board",
         "members": [
             {
-                "firstName": "Niccolò Romeo",
+                "firstName": "Niccolò",
                 "lastName": "Cocchi",
-                "role": "Team Leader (ex electronics)",
-                "linkedin":"",
+                "role": "Team Leader",
+                "linkedin":"niccolo-cocchi",
                 "imgAvail": false,
                 "isHead": true,
                 "boardRole": "Team Lead"
@@ -139,7 +139,7 @@
                     "lastName": "Bellina",
                     "role": "Software",
                     "linkedin": "",
-                    "imgAvail": false,
+                    "imgAvail": true,
                     "isHead": true,
                     "boardRole": "Software Lead"
                 }
@@ -175,15 +175,16 @@
                     "lastName": "Baldini",
                     "role": "Management",
                     "linkedin": "",
-                    "imgAvail": false,
-                    "isHead": true
+                    "imgAvail": true,
+                    "isHead": true,
+                    "boardRole": "Finance Lead"
                 },
                 {
                     "firstName": "Camilla",
                     "lastName": "Catelani",
                     "role": "Management",
                     "linkedin": "",
-                    "imgAvail": false,
+                    "imgAvail": true,
                     "isHead": true,
                     "boardRole": "Logistics Lead"
                 },
@@ -297,7 +298,7 @@
                     "lastName": "Romdhani",
                     "role": "Recovery",
                     "linkedin": "",
-                    "imgAvail": false,
+                    "imgAvail": true,
                     "isHead": true,
                     "boardRole": "Recovery Lead"
                 },
@@ -414,7 +415,7 @@
                 {
                     "firstName": "Francesco",
                     "lastName": "Beraldi",
-                    "role": "Logistics",
+                    "role": "Project Coordinator",
                     "linkedin": "",
                     "imgAvail": false,
                     "isHead": false
