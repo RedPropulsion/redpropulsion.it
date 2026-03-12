@@ -1,11 +1,21 @@
 import Content from "@/content/sponsors.json";
 import Image from "next/image";
 
+interface Sponsor {
+  name: string;
+  image: string;
+  url: string;
+  description: string;
+  scale?: string;
+}
+
 export default function Sponsors() {
-  return Content.sponsors.length > 0 ? (
+  const sponsors = Content.sponsors as Sponsor[];
+
+  return sponsors.length > 0 ? (
     <div className="w-full relative">
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
-        {Content.sponsors.map((item, i) => (
+        {sponsors.map((item, i) => (
           <a
             key={i}
             href={item.url}
@@ -23,7 +33,7 @@ export default function Sponsors() {
                 height={80}
                 style={{ 
                   objectFit: "contain",
-                  transform: `scale(${(item as any).scale || 1})`
+                  transform: `scale(${item.scale || 1})`
                 }}
               />
             </div>
