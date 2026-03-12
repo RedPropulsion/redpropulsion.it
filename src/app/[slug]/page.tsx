@@ -2,10 +2,8 @@ import Block, { validateBlockContent } from "@/components/Block";
 import UnderConstruction from "@/components/UnderConstruction";
 import { notFound } from "next/navigation";
 
-import contactsContent from "@/content/contacts_page.json";
 import departmentsContent from "@/content/departments_page.json";
 import projectsContent from "@/content/projects_page.json";
-import sponsorsContent from "@/content/sponsors_page.json";
 
 const pages: Record<string, typeof departmentsContent> = {
     departments: departmentsContent,
