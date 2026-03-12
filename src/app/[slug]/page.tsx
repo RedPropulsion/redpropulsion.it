@@ -7,11 +7,9 @@ import departmentsContent from "@/content/departments_page.json";
 import projectsContent from "@/content/projects_page.json";
 import sponsorsContent from "@/content/sponsors_page.json";
 
-const pages: Record<string, typeof contactsContent> = {
-    contacts: contactsContent,
+const pages: Record<string, typeof departmentsContent> = {
     departments: departmentsContent,
     projects: projectsContent,
-    sponsors: sponsorsContent,
 };
 
 export function generateStaticParams() {
