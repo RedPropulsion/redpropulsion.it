@@ -1,30 +1,14 @@
-import Content from "@/content/contacts_page.json";
-import Block, { validateBlockContent } from "@/components/Block";
-import UnderConstruction from "@/components/UnderConstruction";
+import Contacts from "@/components/Contacts";
 
 export function generateMetadata() {
-  return {
-    title: Content.title,
-    description: Content.description,
-  };
+    return {
+        title: "Contacts",
+        description: "Contatti e informazioni sul team Red Propulsion",
+    };
 }
 
 export default function Page() {
-  if (Content.sections.length === 0) {
-    return UnderConstruction();
-  }
-
-  return (
-    <>
-      <div
-        style={{
-          height: "100px",
-        }}
-      ></div>
-      {Content.sections.map((content, i) => {
-        validateBlockContent(content);
-        return <Block content={content} key={i} />;
-      })}
-    </>
-  );
+    return (
+        <Contacts />
+    );
 }

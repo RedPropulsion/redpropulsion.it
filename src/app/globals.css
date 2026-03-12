@@ -8,17 +8,16 @@
   --background-light: #1f2937;
   --background: #111827;
 
-  --background-gradient: linear-gradient(
-    135deg,
-    var(--background-dark) 0%,
-    var(--background) 50%,
-    var(--background-light) 100%
-  );
+  --background-gradient: linear-gradient(135deg,
+      var(--background-dark) 0%,
+      var(--background) 50%,
+      var(--background-light) 100%);
 
   --foreground-dim: hsl(240 5% 64.9%);
   --foreground-light: white;
 
-  --primary: hsl(0 72.2% 50.6%);
+  --primary-dark: #7d030f;
+  --primary: #d32f2f;
 
   --red: #dd4e49;
   --lightred: #fc6f5b;
@@ -36,22 +35,20 @@
   --color-primary: var(--primary);
   --color-background-dark: var(--background-dark);
   --color-foreground-light: var(--foreground-light);
-  --color-foreground-dim: var(--forground-dim);
+  --color-foreground-dim: var(--foreground-dim);
 }
 
 @layer components {
   .space-gradient {
-    background: linear-gradient(
-      135deg,
-      var(--background-dark) 0%,
-      var(--background) 50%,
-      var(--background-light) 100%
-    );
+    background: linear-gradient(135deg,
+        var(--background-dark) 0%,
+        var(--background) 50%,
+        var(--background-light) 100%);
   }
 
   .rocket-gradient,
   .text-gradient {
-    background: linear-gradient(135deg, #dc2626 0%, #ea580c 100%);
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
   }
 
   .text-gradient {
@@ -61,17 +58,139 @@
   }
 
   .border-rocket {
-    border-image: linear-gradient(135deg, #dc2626 0%, #ea580c 100%) 1;
+    border-image: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%) 1;
+  }
+
+  .section-title {
+    @apply font-condensed text-4xl md:text-5xl font-bold mb-12 capitalize;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }
 
 html {
   /* Needed for safari in iOS  */
   @apply bg-background-dark;
+  scroll-behavior: smooth;
 }
 
 body {
   background: var(--background-gradient);
   color: var(--foreground-dim);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* === Fade-in-up animation for hero section === */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 0.6; }
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+  opacity: 0;
+}
+
+.delay-100 {
+  animation-delay: 0.1s;
+}
+
+.delay-200 {
+  animation-delay: 0.2s;
+}
+
+.delay-300 {
+  animation-delay: 0.3s;
+}
+
+.delay-400 {
+  animation-delay: 0.4s;
+}
+
+.delay-500 {
+  animation-delay: 0.5s;
+}
+
+.delay-600 {
+  animation-delay: 0.6s;
+}
+
+.delay-700 {
+  animation-delay: 0.7s;
+}
+
+/* === Twinkle animation for stars === */
+@keyframes twinkle {
+
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.animate-twinkle {
+  animation: twinkle ease-in-out infinite;
+}
+
+/* === Smooth float animation for arrow === */
+@keyframes floatDown {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(8px);
+  }
+}
+
+.animate-float {
+  animation: floatDown 2.5s ease-in-out infinite;
+}
+
+/* === Scroll-reveal animation for sections === */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* === Industrial / Command Center Animations === */
+@keyframes scan {
+  0% {
+    transform: translateX(-150%);
+  }
+
+  100% {
+    transform: translateX(600%);
+  }
+}
+
+
+.animate-scan {
+  animation: scan 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }

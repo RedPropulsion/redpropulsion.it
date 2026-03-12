@@ -1,18 +1,22 @@
 import Section from "@/components/Section";
 import CardsSection, { CardProps } from "./CardsSection";
+import BentoSection, { BentoSectionProps } from "./BentoSection";
 
-const blockTypes = ["text_section", "cards_section"];
+const blockTypes = ["text_section", "cards_section", "bento_section"];
 
 type BlockContent =
   | {
-      type: "text_section";
-      title: string;
-      body: string;
-    }
+    type: "text_section";
+    title: string;
+    body: string;
+  }
   | {
-      type: "cards_section";
-      cards: CardProps[];
-    };
+    type: "cards_section";
+    cards: CardProps[];
+  }
+  | ({
+    type: "bento_section";
+  } & BentoSectionProps);
 
 export default function Block({
   content,
@@ -25,6 +29,9 @@ export default function Block({
     }
     case "cards_section": {
       return <CardsSection cards={content.cards} />;
+    }
+    case "bento_section": {
+      return <BentoSection {...content} />;
     }
   }
 }

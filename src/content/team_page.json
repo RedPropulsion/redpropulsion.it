@@ -1,9 +1,9 @@
 {
-    "title": "Our Team",
-    "description": "Meet the talented people behind Red Propulsion.",
+    "title": "TEAM",
+    "description": "Incontra i talenti dietro a Red Propulsion.",
     "banner": {
-        "title": "Our Team",
-        "description": "Meet the talented people behind Red Propulsion.",
+        "title": "TEAM",
+        "description": "Incontra i talenti dietro a Red Propulsion.",
         "backgroundImage": "/foto.jpeg"
     },
     "board": {
@@ -13,7 +13,7 @@
                 "firstName": "Niccolò",
                 "lastName": "Cocchi",
                 "role": "Team Leader",
-                "linkedin":"niccolo-cocchi",
+                "linkedin": "niccolo-cocchi",
                 "imgAvail": false,
                 "isHead": true,
                 "boardRole": "Team Lead"
@@ -253,7 +253,7 @@
             ]
         },
         {
-            "title": "Aerodinamica",
+            "title": "Aerodynamics",
             "members": [
                 {
                     "firstName": "Filippo",
@@ -291,7 +291,7 @@
             ]
         },
         {
-            "title": "Recupero",
+            "title": "Recovery",
             "members": [
                 {
                     "firstName": "Ahmed Massimo",
@@ -416,7 +416,7 @@
                     "firstName": "Francesco",
                     "lastName": "Beraldi",
                     "role": "Project Coordinator",
-                    "linkedin": "",
+                    "linkedin": "https://www.linkedin.com/in/francesco-beraldi-68a97631b/",
                     "imgAvail": false,
                     "isHead": false
                 }

@@ -6,6 +6,7 @@
 
     p {
       font-size: var(--font-size-paragraph);
+      text-align: justify;
       @apply mb-8 leading-6 font-condensed leading-7;
     }
 
@@ -14,7 +15,16 @@
     }
 
     a {
-      @apply underline hover:text-primary;
+      @apply relative text-white transition-colors duration-300 no-underline whitespace-nowrap;
+    }
+
+    a::after {
+      content: '';
+      @apply absolute left-0 -bottom-1 w-full h-[1px] bg-primary origin-left scale-x-0 transition-transform duration-300;
+    }
+
+    a:hover::after {
+      @apply scale-x-100;
     }
 
     img {

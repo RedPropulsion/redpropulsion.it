@@ -1,6 +1,6 @@
 import Block, { validateBlockContent } from "@/components/Block";
 import Landing from "@/components/Landing";
-import Sponsors from "@/components/Sponsors";
+import ScrollReveal from "@/components/ScrollReveal";
 import Stats from "@/components/Stats";
 
 import Content from "@/content/index_page.json";
@@ -16,12 +16,17 @@ export default function Home() {
   return (
     <>
       <Landing {...Content.landing} />
-      <Sponsors />
       {Content.sections.map((content, i) => {
         validateBlockContent(content);
-        return <Block content={content} key={i} />;
+        return (
+          <ScrollReveal key={i}>
+            <Block content={content} />
+          </ScrollReveal>
+        );
       })}
-      <Stats statistics={Content.statistics} />
+      <ScrollReveal>
+        <Stats statistics={Content.statistics} />
+      </ScrollReveal>
     </>
   );
 }

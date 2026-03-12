@@ -1,40 +1,32 @@
-import Bounded from "@/components/Bounded";
 import Content from "@/content/faq.json";
+import { FaqList } from "@/components/FaqList";
 
 export function generateMetadata() {
   return {
     title: "FAQ",
-    description: "Frequently Asked Question of Red Propulsion team",
+    description: "Domande frequenti sul team Red Propulsion",
   };
 }
 
 export default function Page() {
   return (
-    <div className="pt-20">
-      <Bounded>
-        <h1 className="text-5xl font-condensed font-bold text-gradient">
-          F.A.Q.s
-        </h1>
-
-        <div className="my-10 grid md:grid-cols-2 gap-x-8">
-          {Content.faq.flatMap((item) => {
-            return [
-              <div
-                key={item.question + "1"}
-                className="text-2xl font-orbitron text-gray-200 my-4 md:my-12"
-              >
-                {item.question}
-              </div>,
-              <div
-                key={item.question + "2"}
-                className="text-xl border-l-4 pl-2 border-rocket font-condensed leading-8 mb-8 md:my-12"
-              >
-                {item.answer}
-              </div>,
-            ];
-          })}
+    <main className="min-h-screen pb-32 md:pb-40 relative z-10">
+      {/* Page Header */}
+      <section className="w-full relative h-[40vh] min-h-[320px] flex items-center justify-center">
+        <div className="relative z-10 text-center px-4 mt-20 animate-fade-in-up delay-100">
+          <h1 className="text-6xl md:text-8xl font-condensed font-bold uppercase text-gradient mb-4">
+            FAQ
+          </h1>
+          <p className="font-condensed text-foreground-dim text-lg md:text-xl max-w-md mx-auto leading-relaxed">
+            Domande frequenti sul team e sulle nostre attività.
+          </p>
         </div>
-      </Bounded>
-    </div>
+      </section>
+
+      <div className="max-w-3xl mx-auto px-6 mt-2 md:mt-6">
+        {/* FAQ List with staggered entry */}
+        <FaqList items={Content.faq} />
+      </div>
+    </main>
   );
 }
