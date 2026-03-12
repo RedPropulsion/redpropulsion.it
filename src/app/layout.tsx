@@ -17,6 +17,9 @@ export const metadata: Metadata = {
   applicationName: "Red Propulsion",
   authors: [{ name: "Red Propulsion Team" }],
   keywords: ["Red Propulsion", "Rocketry", "Firenze", "Student Team", "Ingegneria aerospaziale"],
+  other: {
+    google: "nositelinks",
+  },
 };
 
 export default function RootLayout({
