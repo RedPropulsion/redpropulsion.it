@@ -17,8 +17,12 @@ export const metadata: Metadata = {
   applicationName: "Red Propulsion",
   authors: [{ name: "Red Propulsion Team" }],
   keywords: ["Red Propulsion", "Rocketry", "Firenze", "Student Team", "Ingegneria aerospaziale"],
+  alternates: {
+    canonical: "https://redpropulsion.it",
+  },
   other: {
     google: "nositelinks",
+    googlebot: "nositelinks",
   },
 };
 
