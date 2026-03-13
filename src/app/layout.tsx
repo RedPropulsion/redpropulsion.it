@@ -24,6 +24,9 @@ export const metadata: Metadata = {
     google: "nositelinks",
     googlebot: "nositelinks",
   },
+  verification: {
+    google: "CLAJEOYvkVy0XrWfJTuhPJnHiHVxT9VJdhv93Ggw4p4",
+  },
 };
 
 export default function RootLayout({
