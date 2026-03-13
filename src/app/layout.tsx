@@ -8,7 +8,7 @@ import StarsBackground from "@/components/StarsBackground";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://www.redpropulsion.it"),
+  metadataBase: new URL("https://redpropulsion.it"),
   title: {
     template: "%s | Red Propulsion",
     default: "Red Propulsion | Race to Space",
