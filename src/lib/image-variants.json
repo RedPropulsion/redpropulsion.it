@@ -9,6 +9,34 @@
       "width": 320
     }
   ],
+  "/assets/amd-patch.svg": [
+    {
+      "src": "/optimized/assets/amd-patch-190.webp",
+      "width": 190
+    },
+    {
+      "src": "/optimized/assets/amd-patch-380.webp",
+      "width": 380
+    },
+    {
+      "src": "/optimized/assets/amd-patch-570.webp",
+      "width": 570
+    }
+  ],
+  "/assets/ignis-fulgor.svg": [
+    {
+      "src": "/optimized/assets/ignis-fulgor-190.webp",
+      "width": 190
+    },
+    {
+      "src": "/optimized/assets/ignis-fulgor-380.webp",
+      "width": 380
+    },
+    {
+      "src": "/optimized/assets/ignis-fulgor-570.webp",
+      "width": 570
+    }
+  ],
   "/assets/partners/aisler-official.png": [
     {
       "src": "/optimized/assets/partners/aisler-official-96.webp",

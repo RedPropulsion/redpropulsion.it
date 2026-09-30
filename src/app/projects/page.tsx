@@ -1,4 +1,4 @@
-import Image from "next/image";
+import Image from "@/components/ResponsiveImage";
 import type { Metadata } from "next";
 import content from "@/content/projects_page.json";
 import { validateProjects } from "@/lib/content-validation.mjs";
@@ -25,12 +25,14 @@ export default function ProjectsPage() {
         </header>
 
         <div className="animate-fade-in-up delay-500 space-y-6">
-          {content.projects.map((project) => {
+          {content.projects.map((project, index) => {
             const positions = project.roles.reduce((sum, role) => sum + role.positions, 0);
             return (
               <details key={project.title} style={{ clipPath: "polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px)" }} className="project-card group overflow-hidden border border-white/10 bg-white/5 transition-colors duration-300 hover:border-white/25 open:border-primary/40 open:bg-white/[0.07]">
                 <summary className="project-summary scroll-mt-28 grid cursor-pointer list-none grid-cols-[minmax(0,1fr)_24px] items-center gap-x-4 gap-y-5 p-5 sm:grid-cols-[140px_minmax(0,1fr)_24px] sm:gap-x-7 sm:p-7 lg:grid-cols-[190px_minmax(0,1fr)_24px] lg:gap-x-10 lg:p-9">
-                  <Image src={project.image.src} alt={project.image.alt} width={project.image.width} height={project.image.height} sizes="(max-width: 639px) 180px, (max-width: 1023px) 140px, 190px" className="col-span-2 mx-auto h-28 w-full max-w-[180px] object-contain sm:col-span-1 sm:h-36 sm:max-w-none lg:h-44" />
+                  <div className="col-span-2 mx-auto w-full max-w-[180px] sm:col-span-1 sm:max-w-none">
+                  <Image loading={index === 0 ? "eager" : "lazy"} fetchPriority={index === 0 ? "high" : "auto"} src={project.image.src} alt={project.image.alt} width={project.image.width} height={project.image.height} sizes="(max-width: 639px) 180px, (max-width: 1023px) 140px, 190px" className="h-28 w-full object-contain sm:h-36 lg:h-44" />
+                  </div>
                   <div className="min-w-0">
                     <span className="mb-3 block font-condensed text-sm uppercase tracking-[0.2em] text-foreground-dim">
                       {project.tag}

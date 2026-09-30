@@ -45,3 +45,6 @@ Lint, `typecheck` e test sono controlli distinti. La CI li esegue prima della pu
 - [Versioni e manutenzione delle dipendenze](dependencies.md)
 - [README e comandi operativi](../README.md)
 - [Stato del sito](../web_page_status.md)
+
+- [Immagini responsive e prestazioni](image-performance.md)
+- [Verifica prestazioni e font locali](performance.md)

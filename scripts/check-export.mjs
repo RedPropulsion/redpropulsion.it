@@ -19,6 +19,17 @@ for (const route of routes) {
   } else assert.ok(sitemap.includes(`<loc>${canonical}</loc>`), `${route}: rotta assente dalla sitemap`);
 }
 
+const fontFiles = ["orbitron-latin-variable.woff2", "roboto-condensed-latin-variable.woff2", "roboto-condensed-latin-ext-variable.woff2"];
+for (const name of fontFiles) {
+  const bytes = readFileSync(join("out/fonts", name));
+  assert.equal(bytes.subarray(0, 4).toString(), "wOF2", `Font WOFF2 non valido: ${name}`);
+}
+for (const route of routes) {
+  const html = readFileSync(join("out", route === "/" ? "index.html" : `${route.slice(1)}.html`), "utf8");
+    const hints = [...html.matchAll(/<link\b([^>]*)>/g)].map(match => attributes(match[1])).filter(link => link.rel === "preload" && link.as === "font");
+  for (const name of fontFiles.slice(0, 2)) assert.equal(hints.filter(link => link.href === `/fonts/${name}`).length, 1, `${route}: preload font mancante o duplicato`);
+}
+
 const team = JSON.parse(readFileSync("src/content/team_page.json", "utf8"));
 const members = [...team.board.members, ...team.departments.flatMap((department) => department.members)];
 for (const member of members.filter((person) => person.imgAvail || person.imgSrc)) {
@@ -34,6 +45,8 @@ for (const images of Object.values(variants)) {
 const projects = JSON.parse(readFileSync("src/content/projects_page.json", "utf8"));
 const projectsHtml = readFileSync("out/projects.html", "utf8");
 for (const project of projects.projects) {
+  assert.ok(variants[project.image.src]?.length, `Varianti responsive mancanti: ${project.title}`);
+  for (const image of variants[project.image.src]) assert.ok(projectsHtml.includes(`${image.src} ${image.width}w`), `Variante non usata nei progetti: ${image.src}`);
   assert.ok(existsSync(join("out", project.image.src)), `Patch mancante: ${project.title}`);
   const links = [...projectsHtml.matchAll(/<a\b([^>]*)>/g)].map(match => attributes(match[1]));
   const link = links.find(link => link.href === project.applicationUrl);

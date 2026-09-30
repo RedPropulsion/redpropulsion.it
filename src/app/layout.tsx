@@ -1,4 +1,5 @@
 import "./globals.css";
+import FontPreloads from "@/components/FontPreloads";
 import Footer from "@/components/Footer";
 
 import FooterContent from "@/content/footer.json";
@@ -35,6 +36,7 @@ export default function RootLayout({
   return (
     <html lang="it" data-scroll-behavior="smooth">
       <body className="relative min-h-screen">
+        <FontPreloads />
         <StarsBackground />
         <div className="relative z-10 flex flex-col min-h-screen">
           <Navbar />
