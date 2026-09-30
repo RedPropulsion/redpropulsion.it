@@ -1,8 +1,10 @@
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title: "Team",
-    description: "Scopri il team multidisciplinare di Red Propulsion: appassionati, ingegneri e studenti uniti dalla passione per l'aerospazio.",
+    title: "Progetti",
+    description: "Scopri i progetti aperti di Red Propulsion.",
+    alternates: { canonical: "/projects" },
+    robots: { index: false, follow: true },
 };
 
 export default function TeamLayout({

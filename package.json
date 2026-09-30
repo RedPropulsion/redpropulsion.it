@@ -4,30 +4,41 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
+    "prebuild": "npm run check:content && node scripts/prepare-images.mjs",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start": "node scripts/preview.mjs",
+    "lint": "eslint src scripts",
+    "check:export": "node scripts/check-export.mjs",
+    "preview": "node scripts/preview.mjs",
+    "check:content": "node scripts/check-content.mjs",
+    "typecheck": "next typegen && tsc --noEmit --incremental false",
+    "test": "node --test scripts/*.test.mjs"
   },
   "dependencies": {
-    "@tailwindcss/postcss": "^4.1.11",
-    "lucide-react": "^0.514.0",
-    "next": "15.3.3",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0",
+    "@tailwindcss/postcss": "^4.3.3",
+    "lucide-react": "0.514.0",
+    "next": "16.3.7",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
     "react-markdown": "^10.1.0",
-    "swiper": "^11.2.10",
-    "tailwindcss": "^4.1.11"
+    "swiper": "14.3.0",
+    "tailwindcss": "^4.3.3"
+  },
+  "overrides": {
+    "postcss": "^8.5.28"
   },
   "devDependencies": {
-    "@eslint/eslintrc": "^3",
-    "@types/node": "^20",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
-    "eslint": "^9",
-    "eslint-config-next": "15.3.3",
-    "eslint-config-prettier": "^10.1.5",
-    "prettier": "^3.5.3",
-    "rehype-raw": "^7.0.0",
-    "typescript": "^5"
+    "@types/node": "^24.19.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "eslint": "^9.39.5",
+    "eslint-config-next": "16.3.7",
+    "eslint-config-prettier": "^10.1.8",
+    "prettier": "^3.9.9",
+    "typescript": "~6.0.3",
+    "sharp": "0.35.5"
+  },
+  "engines": {
+    "node": ">=24 <25"
   }
 }

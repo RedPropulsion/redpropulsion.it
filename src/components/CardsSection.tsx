@@ -1,13 +1,7 @@
 "use client";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import {
-  EffectCoverflow,
-  Mousewheel,
-  Navigation,
-  Pagination,
-} from "swiper/modules";
-
+import { EffectCoverflow, Mousewheel, Navigation, Pagination } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
@@ -23,12 +17,12 @@ export type CardProps = {
   body: string;
   button: {
     title: string;
-    link: string;
+    url: string;
   };
 };
 
 function Card({ title, body, button }: CardProps) {
-  const isExternal = button.link.startsWith("http");
+  const isExternal = button.url.startsWith("http");
   return (
     <div className="group flex flex-col h-full min-h-[400px] p-8 rounded-[2rem] border border-white/5 bg-[#0a0a0a]/40 backdrop-blur-xl transition-all duration-700 hover:border-primary/50 hover:bg-[#0a0a0a]/60 hover:shadow-[0_0_40px_rgba(211,47,47,0.15)] relative overflow-hidden">
       {/* Background Glow - Subtle & Pulsing */}
@@ -43,7 +37,7 @@ function Card({ title, body, button }: CardProps) {
       </div>
       <div className="mt-8 pt-6 border-t border-white/5 relative z-10">
         <Link
-          href={button.link}
+          href={button.url}
           className="inline-block w-full py-4 text-center rounded-full font-condensed font-bold text-white tracking-widest uppercase transition-all duration-500 border border-primary/30 bg-white/5 hover:bg-primary hover:border-primary hover:shadow-[0_0_20px_rgba(211,47,47,0.4)]"
           target={isExternal ? "_blank" : undefined}
           rel={isExternal ? "noopener noreferrer" : undefined}
@@ -75,13 +69,7 @@ export default function CardsSection({ cards }: Props) {
           }}
           effect="coverflow"
           centeredSlides
-          coverflowEffect={{
-            rotate: 0,
-            stretch: 0,
-            depth: 100,
-            modifier: 2.5,
-            slideShadows: false,
-          }}
+          coverflowEffect={{ rotate: 0, stretch: 0, depth: 100, modifier: 2.5, slideShadows: false }}
           className="w-full !pb-20"
         >
           {cards.map((item, i) => (

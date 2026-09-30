@@ -5,6 +5,7 @@ export function generateMetadata() {
   return {
     title: "FAQ",
     description: "Domande frequenti sul team Red Propulsion",
+    alternates: { canonical: "/faq" },
   };
 }
 

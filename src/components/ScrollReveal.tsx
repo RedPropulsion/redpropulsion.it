@@ -12,20 +12,22 @@ export default function ScrollReveal({ children, className = "" }: Props) {
 
     useEffect(() => {
         const el = ref.current;
-        if (!el) return;
+        if (!el || !("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+        el.classList.add("reveal-ready");
 
         const observer = new IntersectionObserver(
             ([entry]) => {
-                if (entry.isIntersecting) {
+                const viewportHeight = entry.rootBounds?.height ?? window.innerHeight;
+                if (entry.isIntersecting && (entry.intersectionRatio >= 0.15 || entry.boundingClientRect.height * 0.15 > viewportHeight)) {
                     el.classList.add("visible");
                     observer.unobserve(el);
                 }
             },
-            { threshold: 0.15 },
+            { threshold: [0, 0.15] },
         );
 
         observer.observe(el);
-        return () => observer.disconnect();
+        return () => { observer.disconnect(); el.classList.remove("reveal-ready"); };
     }, []);
 
     return (

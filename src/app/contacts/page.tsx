@@ -1,9 +1,11 @@
 import Contacts from "@/components/Contacts";
+import Content from "@/content/contacts_page.json";
 
 export function generateMetadata() {
     return {
-        title: "Contacts",
-        description: "Contatti e informazioni sul team Red Propulsion",
+        title: Content.title,
+        description: Content.description,
+        alternates: { canonical: "/contacts" },
     };
 }
 

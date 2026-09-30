@@ -1,22 +1,19 @@
 import ReactMarkdown from "react-markdown";
-import rehypeRaw from "rehype-raw";
 
 type Props = {
   content: string;
 };
 
 function preprocessContent(content: string): string {
-  // This ugly regex replaces a single '\n' with <br />
-  //
-  // Multiples \n are preserved as they represent separaton
-  // between paragraphs
-  return content.replaceAll(/(?<!\n)\n(?!\n)/g, "<br />");
+  // Markdown uses two trailing spaces for a line break. Keep blank lines as
+  // paragraph separators without enabling raw HTML in editable content.
+  return content.replace(/(?<!\n)\n(?!\n)/g, "  \n");
 }
 
 export default function RichText({ content }: Props) {
   return (
     <div className="rich-text">
-      <ReactMarkdown rehypePlugins={[rehypeRaw]}>
+      <ReactMarkdown>
         {preprocessContent(content)}
       </ReactMarkdown>
     </div>

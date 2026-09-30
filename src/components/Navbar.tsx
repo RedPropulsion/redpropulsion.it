@@ -4,26 +4,43 @@ import Content from "@/content/navbar.json";
 import { AlignJustify, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname, useRouter } from "next/navigation";
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState } from "react";
 
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrollY, setScrollY] = useState(0);
-  const isHome = usePathname() === "/";
+  const [scrollState, setScrollState] = useState({ started: false, glass: false });
+  const toggleRef = useRef<HTMLButtonElement>(null);
+  const menuRef = useRef<HTMLDivElement>(null);
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const router = useRouter();
+  const navigationTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const cancelNavigation = useCallback(() => {
+    if (navigationTimer.current !== null) clearTimeout(navigationTimer.current);
+    navigationTimer.current = null;
+  }, []);
+  useEffect(() => cancelNavigation, [cancelNavigation]);
+  useEffect(() => { cancelNavigation(); }, [pathname, cancelNavigation]);
 
   // Smooth mobile nav: close menu first, navigate after fade-out
   const handleMobileNav = useCallback((e: React.MouseEvent, url: string) => {
+    if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey || !url.startsWith("/")) return;
     e.preventDefault();
+    cancelNavigation();
     setMenuOpen(false);
-    setTimeout(() => {
+    navigationTimer.current = setTimeout(() => {
+      navigationTimer.current = null;
       router.push(url);
     }, 300);
-  }, [router]);
+  }, [router, cancelNavigation]);
 
   useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
+    const handleScroll = () => {
+      const started = window.scrollY > 0;
+      const glass = window.scrollY > 25;
+      setScrollState(previous => previous.started === started && previous.glass === glass ? previous : { started, glass });
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll(); // check initial state
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -31,19 +48,43 @@ export default function Navbar() {
   // Dual threshold logic
   // showPreAnimation: l'animazione rossa parte istantaneamente al primo scroll
   // showGlass: l'effetto vetro completo e il bordo appaiono poco dopo
-  const showPreAnimation = !isHome || scrollY > 0;
-  const showGlass = !isHome || scrollY > 25;
+  const showPreAnimation = !isHome || scrollState.started;
+  const showGlass = !isHome || scrollState.glass;
 
   const navLinks = Content.links.filter((link) => link.title !== "Join Us");
   const ctaLink = Content.links.find((link) => link.title === "Join Us");
 
   // Impedisce lo scrolling quando il menu mobile è aperto
   useEffect(() => {
-    if (menuOpen) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
+    if (!menuOpen) return;
+    const toggle = toggleRef.current;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    const content = document.getElementById("site-content");
+    if (content) content.inert = true;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setMenuOpen(false);
+      }
+      if (event.key !== "Tab") return;
+      const controls = [toggleRef.current, ...Array.from(menuRef.current?.querySelectorAll<HTMLAnchorElement>("a[href]") ?? [])].filter(Boolean) as HTMLElement[];
+      const first = controls[0];
+      const last = controls[controls.length - 1];
+      if (event.shiftKey && document.activeElement === first) { event.preventDefault(); last?.focus(); }
+      else if (!event.shiftKey && document.activeElement === last) { event.preventDefault(); first?.focus(); }
+    };
+    const desktop = window.matchMedia("(min-width: 1280px)");
+    const onResize = () => { if (desktop.matches) setMenuOpen(false); };
+    document.addEventListener("keydown", onKeyDown);
+    desktop.addEventListener("change", onResize);
+    return () => {
+      document.body.style.overflow = previousOverflow;
+      if (content) content.inert = false;
+      document.removeEventListener("keydown", onKeyDown);
+      desktop.removeEventListener("change", onResize);
+      if (toggle?.getClientRects().length) toggle.focus();
+    };
   }, [menuOpen]);
 
 
@@ -67,30 +108,33 @@ export default function Navbar() {
           </div>
 
           {/* Logo - Left */}
-          <div className="flex-shrink-0 z-50">
+          <div className="min-w-0 z-50">
             <Link
               href="/"
               onClick={(e) => {
+                if (e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+                cancelNavigation();
                 if (isHome) {
                   e.preventDefault();
-                  window.scrollTo({ top: 0, behavior: "smooth" });
+                  window.scrollTo({ top: 0, behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth" });
                 }
                 setMenuOpen(false);
               }}
               className="block"
             >
-              <h1 className="text-white font-condensed font-bold text-2xl tracking-[0.25em] uppercase hover:text-primary transition-all duration-300">
+              <span className="text-white font-condensed font-bold text-[clamp(0.9rem,4.5vw,1.5rem)] tracking-[0.15em] sm:tracking-[0.25em] whitespace-nowrap uppercase hover:text-primary transition-all duration-300">
                 {Content.title}
-              </h1>
+              </span>
             </Link>
           </div>
 
           {/* Nav Links - Center (Desktop) */}
-          <div className="hidden md:flex items-center justify-center gap-8 lg:gap-12 absolute left-1/2 -translate-x-1/2 h-full">
+          <nav aria-label="Navigazione principale" className="hidden xl:flex items-center justify-center gap-2 h-full">
             {navLinks.map((item, i) => (
               <Link
                 key={i}
                 href={item.url}
+                onClick={cancelNavigation}
                 className="text-white/60 hover:text-white font-condensed text-sm uppercase tracking-[0.4em] transition-all duration-500 relative h-full flex items-center group/link px-6"
               >
                 <div className="relative flex items-center justify-center">
@@ -104,7 +148,7 @@ export default function Navbar() {
                 <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 group-hover/link:w-full h-[1px] bg-gradient-to-r from-transparent via-primary/40 to-transparent opacity-0 group-hover/link:opacity-100 transition-all duration-500" />
               </Link>
             ))}
-          </div>
+          </nav>
 
           {/* CTA & Hamburger - Right */}
           <div className="flex items-center gap-8 z-50">
@@ -113,7 +157,7 @@ export default function Navbar() {
                 href={ctaLink.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="hidden md:flex items-center justify-center group/cta relative transition-all duration-500 h-9 w-32 overflow-hidden"
+                className="hidden xl:flex items-center justify-center group/cta relative transition-all duration-500 h-11 w-32 overflow-hidden"
                 style={{
                   clipPath: "polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px)"
                 }}
@@ -133,10 +177,12 @@ export default function Navbar() {
 
             {/* Mobile Hamburger toggle */}
             <button
-              aria-label="Toggle menu"
+              ref={toggleRef}
+              aria-label={menuOpen ? "Chiudi menu" : "Apri menu"}
+              aria-controls="mobile-menu"
               aria-expanded={menuOpen}
-              className="text-white/70 md:hidden p-2 -mr-2 focus:outline-none hover:text-primary transition-colors cursor-pointer"
-              onClick={() => setMenuOpen(!menuOpen)}
+              className="text-white/80 xl:hidden w-11 h-11 flex items-center justify-center shrink-0 hover:text-primary transition-colors cursor-pointer"
+              onClick={() => { cancelNavigation(); setMenuOpen(!menuOpen); }}
             >
               {menuOpen ? <X size={24} /> : <AlignJustify size={24} />}
             </button>
@@ -146,7 +192,11 @@ export default function Navbar() {
 
       {/* Mobile Menu Overlay — Clean Fullscreen, closes on tap outside */}
       <div
-        className={`fixed inset-0 z-40 bg-[#0a0a0a]/[0.98] backdrop-blur-md flex flex-col transition-all duration-500 md:hidden
+        ref={menuRef}
+        id="mobile-menu"
+        inert={!menuOpen}
+        aria-hidden={!menuOpen}
+        className={`fixed inset-0 z-40 bg-[#0a0a0a]/[0.98] backdrop-blur-md flex flex-col overflow-y-auto pt-24 transition-all duration-500 xl:hidden
             ${menuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"
@@ -155,11 +205,11 @@ export default function Navbar() {
         onClick={() => setMenuOpen(false)}
       >
         {/* Top spacing to clear the navbar */}
-        <div className="h-20" />
 
         {/* Nav links — centered vertically in remaining space */}
         <nav
-          className={`flex-1 flex flex-col items-center justify-center gap-10 px-8 transition-all duration-700 ${menuOpen ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
+          aria-label="Navigazione mobile"
+          className={`flex-1 flex flex-col items-center justify-center gap-3 sm:gap-5 px-8 transition-all duration-700 ${menuOpen ? "translate-y-0 opacity-100" : "translate-y-8 opacity-0"
             }`}
         >
           {navLinks.map((item, i) => (
@@ -167,7 +217,7 @@ export default function Navbar() {
               key={i}
               href={item.url}
               onClick={(e) => handleMobileNav(e, item.url)}
-              className="text-white/60 hover:text-white active:text-primary font-condensed text-2xl uppercase tracking-[0.3em] transition-all duration-300 relative cursor-pointer"
+              className="text-white/80 hover:text-white active:text-primary min-h-11 flex items-center font-condensed text-2xl uppercase tracking-[0.3em] transition-all duration-300 relative cursor-pointer"
               style={{ transitionDelay: menuOpen ? `${i * 60}ms` : '0ms' }}
             >
               {item.title}

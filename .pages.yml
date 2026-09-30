@@ -8,7 +8,7 @@ content:
     path: src/content/index_page.json
     fields:
       - { name: title, label: Title, type: string, required: true }
-      - { name: description, label: Description, type: string, options: { maxLength: 100 } }
+      - { name: description, label: Description, type: string, options: { maxlength: 200 } }
       - { name: landing, component: landing }
       - name: sections
         label: Sections
@@ -26,6 +26,23 @@ content:
                 label: Cards
                 component: card
                 list: true
+          - name: bento_section
+            label: Bento Section
+            fields:
+              - { name: title, label: Title, type: string, required: true }
+              - { name: text, label: Text, type: text, required: true }
+              - { name: images, label: Images, type: image, list: { max: 2 } }
+              - { name: imageAlt, label: Image description, type: string }
+              - name: gallery
+                label: Photo gallery
+                type: object
+                list: true
+                fields:
+                  - { name: src, label: Photo, type: image, required: true }
+                  - { name: alt, label: Description, type: string, required: true }
+                  - { name: position, label: Crop position, type: string }
+                  - { name: fit, label: Image fit, type: select, options: { values: [cover, contain] } }
+
       - name: statistics
         label: Statistics
         type: object
@@ -43,7 +60,7 @@ content:
     path: src/content/footer.json
     fields:
       - { name: title, label: Title, type: string, required: true }
-      - { name: body, label: Body, type: rich-text }
+      - { name: body, label: Body, type: rich-text, options: { format: markdown } }
       - { name: social_links, label: Social Links, component: social_link, list: true }
   - name: navbar
     label: Navbar
@@ -58,7 +75,7 @@ content:
     path: src/content/sponsors_page.json
     fields:
       - { name: title, label: Title, type: string, required: true }
-      - { name: description, label: Description, type: string, options: { maxLength: 100 } }
+      - { name: description, label: Description, type: string, options: { maxlength: 200 } }
       - name: sections
         label: Sections
         type: block
@@ -81,30 +98,44 @@ content:
     path: src/content/projects_page.json
     fields:
       - { name: title, label: Title, type: string, required: true }
-      - { name: description, label: Description, type: string, options: { maxLength: 100 } }
-      - name: sections
-        label: Sections
-        type: block
-        blockKey: type
+      - { name: description, label: Introduction, type: text, required: true }
+      - name: projects
+        label: Projects
+        type: object
         list: true
-        blocks:
-          - name: text_section
-            label: Text Section
-            component: section
-          - name: cards_section
-            label: Cards Section
+        fields:
+          - { name: tag, label: Category, type: string, required: true }
+          - { name: title, label: Title, type: string, required: true }
+          - { name: tagline, label: Summary, type: text, required: true }
+          - { name: description, label: Description, type: text, required: true }
+          - name: image
+            label: Mission patch
+            type: object
+            required: true
             fields:
-              - name: cards
-                label: Cards
-                component: card
-                list: true
+              - { name: src, label: Image, type: image, required: true }
+              - { name: alt, label: Alternative text, type: string, required: true }
+              - { name: width, label: Width, type: number, required: true, options: { min: 1 } }
+              - { name: height, label: Height, type: number, required: true, options: { min: 1 } }
+          - name: roles
+            label: Available roles
+            type: object
+            required: true
+            list: { min: 1 }
+            fields:
+              - { name: title, label: Role, type: string, required: true }
+              - { name: description, label: Description, type: text, required: true }
+              - { name: positions, label: Positions, type: number, required: true, options: { min: 1 } }
+          - { name: applicationUrl, label: Application URL, type: string, required: true }
+          - { name: applicationLabel, label: Application button, type: string, required: true }
+          - { name: applicationNote, label: Application note, type: text, required: true }
   - name: departments_page
     label: Departments page
     type: file
     path: src/content/departments_page.json
     fields:
       - { name: title, label: Title, type: string, required: true }
-      - { name: description, label: Description, type: string, options: { maxLength: 100 } }
+      - { name: description, label: Description, type: string, options: { maxlength: 200 } }
       - name: sections
         label: Sections
         type: block
@@ -127,7 +158,8 @@ content:
     path: src/content/contacts_page.json
     fields:
       - { name: title, label: Title, type: string, required: true }
-      - { name: description, label: Description, type: string, options: { maxLength: 100 } }
+      - { name: description, label: Description, type: string, options: { maxlength: 200 } }
+      - { name: email, label: Email, type: string, required: true }
       - name: sections
         label: Sections
         type: block
@@ -150,7 +182,7 @@ content:
     path: src/content/team_page.json
     fields:
       - { name: title, label: Title, type: string, required: true }
-      - { name: description, label: Description, type: string, options: { maxLength: 160 } }
+      - { name: description, label: Description, type: string, options: { maxlength: 160 } }
       - name: banner
         label: Banner
         type: object
@@ -198,7 +230,7 @@ components:
         type: string
       - name: subtitle
         label: Subtitle
-        type: rich-text
+        type: text
       - name: buttons
         label: Buttons
         component: button
@@ -214,6 +246,7 @@ components:
       - name: body
         label: Section content
         type: rich-text
+        options: { format: markdown }
   social_link:
     label: Social Link
     fields:
@@ -257,6 +290,7 @@ components:
       - name: body
         label: Body
         type: rich-text
+        options: { format: markdown }
       - name: button
         label: Button
         component: button
@@ -275,6 +309,11 @@ components:
       - name: description
         label: description
         type: string
+      - { name: logoBackground, label: Logo background, type: select, options: { values: [light] } }
+      - { name: logoFit, label: Logo fit, type: select, options: { values: [contain, cover] } }
+      - { name: logoWidth, label: Logo width (px), type: number }
+      - { name: logoHeight, label: Logo height (px), type: number }
+      - { name: scale, label: Logo scale, type: string }
   question:
     label: Question
     fields:
@@ -282,8 +321,8 @@ components:
         label: Question
         type: string
       - name: answer
-        label: Answeru
-        type: rich-text
+        label: Answer
+        type: text
   member:
     label: Member
     fields:

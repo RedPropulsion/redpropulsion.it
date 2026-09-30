@@ -32,3 +32,6 @@
     }
   }
 }
+@media (max-width: 767px) {
+  .rich-text p { text-align: left; }
+}

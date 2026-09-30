@@ -15,11 +15,9 @@ export const metadata: Metadata = {
   },
   description: "Associazione studentesca dell'Università degli Studi di Firenze dedita alla progettazione e realizzazione di razzi sonda.",
   applicationName: "Red Propulsion",
+  twitter: { card: "summary_large_image" },
   authors: [{ name: "Red Propulsion Team" }],
   keywords: ["Red Propulsion", "Rocketry", "Firenze", "Student Team", "Ingegneria aerospaziale"],
-  alternates: {
-    canonical: "https://redpropulsion.it",
-  },
   other: {
     google: "nositelinks",
     googlebot: "nositelinks",
@@ -35,13 +33,15 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="it">
+    <html lang="it" data-scroll-behavior="smooth">
       <body className="relative min-h-screen">
         <StarsBackground />
         <div className="relative z-10 flex flex-col min-h-screen">
           <Navbar />
-          {children}
-          <Footer {...FooterContent} />
+          <div id="site-content" className="flex flex-col flex-1">
+            {children}
+            <Footer {...FooterContent} />
+          </div>
         </div>
       </body>
     </html>

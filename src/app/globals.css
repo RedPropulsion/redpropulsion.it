@@ -74,7 +74,12 @@ html {
   /* Needed for safari in iOS  */
   @apply bg-background-dark;
   scroll-behavior: smooth;
+  color-scheme: dark;
 }
+
+/* Hide the visual bars without disabling mouse, touch or keyboard scrolling. */
+* { scrollbar-width: none; }
+*::-webkit-scrollbar { display: none; width: 0; height: 0; }
 
 body {
   background: var(--background-gradient);
@@ -133,21 +138,15 @@ body {
   animation-delay: 0.7s;
 }
 
-/* === Twinkle animation for stars === */
-@keyframes twinkle {
-
-  0%,
-  100% {
-    opacity: 0.15;
-  }
-
-  50% {
-    opacity: 0.7;
-  }
+/* Slow, individually varied brightness; the sky remains decorative. */
+@keyframes starTwinkle {
+  0%, 100% { opacity: var(--star-min); }
+  50% { opacity: var(--star-max); }
 }
-
-.animate-twinkle {
-  animation: twinkle ease-in-out infinite;
+.star { opacity: var(--star-min); animation: starTwinkle ease-in-out infinite; }
+.star-field[data-paused="true"] .star { animation-play-state: paused; }
+@media (prefers-reduced-motion: reduce) {
+  .star { animation: none !important; }
 }
 
 /* === Smooth float animation for arrow === */
@@ -169,12 +168,16 @@ body {
 
 /* === Scroll-reveal animation for sections === */
 .scroll-reveal {
+  opacity: 1;
+}
+
+.scroll-reveal.reveal-ready {
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94), transform 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
-.scroll-reveal.visible {
+.scroll-reveal.reveal-ready.visible {
   opacity: 1;
   transform: translateY(0);
 }
@@ -194,3 +197,32 @@ body {
 .animate-scan {
   animation: scan 6s cubic-bezier(0.4, 0, 0.2, 1) infinite;
 }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+  .scroll-reveal.reveal-ready { opacity: 1; transform: none; }
+  .animate-fade-in-up { opacity: 1; }
+}
+
+:where(a, button):focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 3px;
+}
+
+:where(a, button)[style*="clip-path"]:focus-visible {
+  outline-offset: -4px;
+}
+
+.touch-link { min-width: 44px; min-height: 44px; display: inline-flex; align-items: center; justify-content: center; }
+
+@media (max-width: 767px) {
+  .group\/tab, .group\/sub { min-height: 44px; }
+}
+
+.project-card > summary::-webkit-details-marker { display: none; }
+.project-card > summary:focus-visible { outline: 2px solid #fff; outline-offset: -4px; }

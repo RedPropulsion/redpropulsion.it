@@ -1,12 +1,15 @@
-import Image from "next/image";
+import Image from "./ResponsiveImage";
+import PhotoGallery, { type GalleryPhoto } from "./PhotoGallery";
 
 export type BentoSectionProps = {
     title: string;
     text: string;
     images: string[];
+    imageAlt?: string;
+    gallery?: GalleryPhoto[];
 };
 
-export default function BentoSection({ title, text, images }: BentoSectionProps) {
+export default function BentoSection({ title, text, images, imageAlt, gallery }: BentoSectionProps) {
     return (
         <div className="px-4 py-24 sm:py-32 relative max-w-7xl mx-auto">
             {/* LAYOUT A BLOCCHI ALTERNATI (ZIG-ZAG) PER BILANCIARE GLI SPAZI */}
@@ -34,7 +37,8 @@ export default function BentoSection({ title, text, images }: BentoSectionProps)
                             {/* Premium Zoom Image */}
                             <Image
                                 src={images[0]}
-                                alt={`${title} Immagine 1`}
+                                alt={imageAlt ?? "Attività del team Red Propulsion"}
+                                sizes="(min-width: 1024px) 50vw, 100vw"
                                 fill
                                 className="object-cover transition-all duration-[3000ms] ease-out group-hover:scale-105 group-hover:brightness-[1.15]"
                             />
@@ -63,14 +67,15 @@ export default function BentoSection({ title, text, images }: BentoSectionProps)
                 </div>
 
                 {/* Blocco Inferiore: Foto 2 Panoramica a tutta larghezza */}
-                {images[1] && (
+                {gallery?.length ? <PhotoGallery photos={gallery} /> : images[1] && (
                     <div className="relative w-full h-[220px] sm:h-[400px] lg:h-[600px] rounded-xl sm:rounded-[2.5rem] overflow-hidden shadow-2xl border border-white/10 group transition-all duration-700">
                         {/* Premium Zoom Image */}
                         <Image
                             src={images[1]}
-                            alt={`${title} Immagine 2`}
+                            alt="Foto di gruppo del team Red Propulsion"
+                            sizes="(min-width: 1280px) 1280px, 100vw"
                             fill
-                            className="object-position-top object-cover transition-all duration-[3000ms] ease-out group-hover:scale-105 group-hover:brightness-[1.15]"
+                            className="object-top object-cover transition-all duration-[3000ms] ease-out group-hover:scale-105 group-hover:brightness-[1.15]"
                         />
 
                         {/* HUD Overlay Layer */}

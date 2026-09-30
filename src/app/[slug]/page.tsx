@@ -1,13 +1,11 @@
-import Block, { validateBlockContent } from "@/components/Block";
+import Block from "@/components/Block";
 import UnderConstruction from "@/components/UnderConstruction";
 import { notFound } from "next/navigation";
 
 import departmentsContent from "@/content/departments_page.json";
-import projectsContent from "@/content/projects_page.json";
 
 const pages: Record<string, typeof departmentsContent> = {
     departments: departmentsContent,
-    projects: projectsContent,
 };
 
 export function generateStaticParams() {
@@ -24,6 +22,8 @@ export async function generateMetadata(props: {
     return {
         title: content.title,
         description: content.description,
+        alternates: { canonical: `/${slug}` },
+        robots: content.sections.length === 0 ? { index: false, follow: true } : undefined,
     };
 }
 
@@ -43,7 +43,7 @@ export default async function Page(props: {
         <>
             <div style={{ height: "100px" }}></div>
             {content.sections.map((section, i) => {
-                validateBlockContent(section);
+
                 return <Block content={section} key={i} />;
             })}
         </>

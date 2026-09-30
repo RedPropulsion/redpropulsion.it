@@ -1,5 +1,5 @@
 import React, { useId } from "react";
-import Image from 'next/image';
+import Image from './ResponsiveImage';
 
 interface TeamCardProps {
   firstName: string;
@@ -32,8 +32,9 @@ export default function TeamCard({ firstName, lastName, role, linkedin, imgSrc, 
           <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(255,255,255,0.08)_0%,rgba(211,47,47,0.03)_40%,transparent_70%)] opacity-60 group-hover:opacity-100 group-hover:scale-110 transition-all duration-700 pointer-events-none" />
           
           <Image
-            src={String(imgSrc)}
-            alt={`${fullName} photo`}
+            src={imgSrc || '/placeholderRED.webp'}
+            alt={isPlaceholder ? '' : `Foto di ${fullName}`}
+            sizes="80px"
             fill
             className={`transition-all duration-[1.5s] ${isPlaceholder ? 'object-cover p-0 opacity-90' : 'object-cover'}`}
             style={!isPlaceholder ? { 
@@ -43,7 +44,7 @@ export default function TeamCard({ firstName, lastName, role, linkedin, imgSrc, 
         </div>
 
         {/* Testo Compatto */}
-        <div className="flex-grow flex flex-col justify-center min-w-0 pr-8">
+        <div className="flex-grow flex flex-col justify-center min-w-0 pr-12">
           <h3 className="font-condensed text-lg md:text-xl font-bold text-white mb-0.5 group-hover:text-primary transition-colors duration-500 leading-tight truncate">
             {fullName}
           </h3>
@@ -58,7 +59,7 @@ export default function TeamCard({ firstName, lastName, role, linkedin, imgSrc, 
             href={linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className="absolute bottom-3 right-3 p-1.5 rounded-full bg-white/5 border border-white/10 text-foreground-dim hover:text-white hover:bg-primary hover:border-primary hover:shadow-[0_0_15px_rgba(211,47,47,0.6)] transition-all duration-500 z-10"
+            className="touch-link absolute bottom-3 right-3 p-1.5 rounded-full bg-white/5 border border-white/10 text-foreground-dim hover:text-white hover:bg-primary hover:border-primary hover:shadow-[0_0_15px_rgba(211,47,47,0.6)] transition-all duration-500 z-10"
             aria-label={`Profilo LinkedIn di ${fullName}`}
           >
             <svg className="w-3.5 h-3.5 md:w-4 md:h-4 fill-current" viewBox="0 0 24 24">
@@ -85,8 +86,9 @@ export default function TeamCard({ firstName, lastName, role, linkedin, imgSrc, 
         <div className="absolute inset-x-0 top-0 h-full bg-[radial-gradient(ellipse_at_50%_40%,rgba(255,255,255,0.12)_0%,rgba(211,47,47,0.05)_40%,transparent_70%)] opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-1000 pointer-events-none z-0" />
         
         <Image
-          src={String(imgSrc)}
-          alt={`${fullName} photo`}
+          src={imgSrc || '/placeholderRED.webp'}
+          alt={isPlaceholder ? '' : `Foto di ${fullName}`}
+          sizes="(min-width: 1024px) 300px, 50vw"
           fill
           className={`transition-all duration-[1.5s] ${isPlaceholder ? 'object-cover p-0 opacity-90' : 'object-cover object-center sm:object-[center_top]'}`}
           style={!isPlaceholder ? { 
@@ -129,7 +131,7 @@ export default function TeamCard({ firstName, lastName, role, linkedin, imgSrc, 
       </div>
 
       {/* Contenuto Testuale e Glassmorphism Header */}
-      <div className={`p-3 md:p-8 flex flex-col justify-start flex-grow relative z-20 -mt-2 ${premium ? 'bg-[#0d0d0d]' : 'bg-[#0a0a0a]'}`}>
+      <div className={`p-3 md:p-8 pb-14 md:pb-16 flex flex-col justify-start flex-grow relative z-20 -mt-2 ${premium ? 'bg-[#0d0d0d]' : 'bg-[#0a0a0a]'}`}>
 
         {/* Badge Eyebrow per i Responsabili */}
         {isLead && (
@@ -152,7 +154,7 @@ export default function TeamCard({ firstName, lastName, role, linkedin, imgSrc, 
             href={linkedin}
             target="_blank"
             rel="noopener noreferrer"
-            className={`absolute bottom-2 right-2 md:bottom-6 md:right-6 p-1 md:p-2 rounded-full bg-white/5 border border-white/10 text-foreground-dim hover:text-white transition-all duration-500 ${premium
+            className={`touch-link absolute bottom-2 right-2 md:bottom-6 md:right-6 p-1 md:p-2 rounded-full bg-white/5 border border-white/10 text-foreground-dim hover:text-white transition-all duration-500 ${premium
               ? 'hover:bg-white/20 hover:border-white hover:text-white hover:shadow-[0_0_20px_rgba(255,255,255,0.4)]'
               : 'hover:bg-primary hover:border-primary hover:shadow-[0_0_15px_rgba(211,47,47,0.6)]'
               }`}

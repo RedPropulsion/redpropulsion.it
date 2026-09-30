@@ -7,15 +7,20 @@ type Props = {
 };
 
 // Technical micro-labels for each stat card
-const techLabels = ["SYS.CREW", "SYS.DEPT", "SYS.CHRONO", "SYS.MISSION"];
+const techLabels: Record<string, string> = {
+  "anno di fondazione": "SYS.ORIGIN",
+  membri: "SYS.CREW",
+  "lanci riusciti": "SYS.MISSION",
+};
 
 export default function Stats({ statistics }: Props) {
   const ref = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
   useEffect(() => {
     const el = ref.current;
-    if (!el) return;
+    if (!el || !("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    setIsVisible(false);
 
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -36,7 +41,7 @@ export default function Stats({ statistics }: Props) {
     <div ref={ref} className="max-w-6xl mx-auto px-6 mt-16 mb-32 md:mb-40 relative">
 
       {/* Stats Grid */}
-      <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 md:gap-10 relative z-10">
+      <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-10 relative z-10">
         {statistics.map((item, i) => (
           <div
             key={i}
@@ -91,7 +96,7 @@ export default function Stats({ statistics }: Props) {
                 <span className="relative inline-flex rounded-full h-1 w-1 bg-primary/60 group-hover:bg-primary transition-colors duration-500" />
               </span>
               <span className="font-mono text-[9px] text-white/25 uppercase tracking-[0.25em] group-hover:text-white/50 transition-colors duration-500">
-                {techLabels[i] || `SYS.${i}`}
+                {techLabels[item.name] || `SYS.${i}`}
               </span>
             </div>
 
@@ -106,7 +111,7 @@ export default function Stats({ statistics }: Props) {
               <div className="w-8 h-[1px] bg-white/10 group-hover:w-full group-hover:bg-primary/40 transition-all duration-500 my-3" />
 
               {/* Description */}
-              <p className="font-condensed capitalize text-sm md:text-base text-foreground-dim/50 group-hover:text-foreground-dim/80 transition-colors duration-500">
+              <p className="font-condensed capitalize text-sm md:text-base text-foreground-dim group-hover:text-foreground-dim/80 transition-colors duration-500">
                 {item.name}
               </p>
             </div>

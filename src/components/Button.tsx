@@ -9,7 +9,7 @@ export type ButtonProps = {
 function scrollDown() {
   window.scrollBy({
     top: window.innerHeight * 0.9,
-    behavior: "smooth",
+    behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "instant" : "smooth",
   });
 }
 

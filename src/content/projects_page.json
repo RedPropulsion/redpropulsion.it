@@ -1,5 +1,90 @@
 {
-  "title": "Red Propulsion",
-  "description": "",
-  "sections": []
+  "title": "Progetti aperti",
+  "description": "Il team è organizzato per progetti, ciascuno con una scadenza definita e un numero minimo e massimo di membri. Apri la scheda del progetto che ti interessa per vedere i ruoli disponibili e candidarti.",
+  "projects": [
+    {
+      "tag": "Sviluppo",
+      "title": "Ignis & Fulgor",
+      "tagline": "I due razzetti gemelli della Season 26/27: due team indipendenti, un solo giorno di lancio.",
+      "description": "Ignis e Fulgor sono i due razzetti gemelli della Season 26/27: due team indipendenti che lavorano in parallelo, con l'obiettivo di far volare i rispettivi vettori nella stessa sessione di lancio e confrontarne le prestazioni. Ogni team segue il proprio razzo a 360°, occupandosi di meccanica, elettronica, RF e controllo, con un Project Manager che coordina organizzazione e tempistiche. È un progetto compatto e a scadenza definita, adatto a chi vuole seguire un ciclo di sviluppo completo, dalla scheda elettronica al lancio, in un gruppo piccolo e coeso.",
+      "image": {
+        "src": "/assets/ignis-fulgor.svg",
+        "width": 1680,
+        "height": 840,
+        "alt": "Le patch di missione dei razzi Ignis e Fulgor"
+      },
+      "roles": [
+        {
+          "title": "Project Manager",
+          "description": "Coordinamento del team, organizzazione delle attività e gestione delle tempistiche di progetto.",
+          "positions": 1
+        },
+        {
+          "title": "Mechanical: Integrazione Motore e Recupero",
+          "description": "Integrazione del motore nel razzo e progettazione del sistema di recupero.",
+          "positions": 1
+        },
+        {
+          "title": "Mechanical: Struttura Esterna ed Elettronica",
+          "description": "Progettazione della struttura esterna del vettore e alloggiamento dei componenti elettronici a bordo.",
+          "positions": 1
+        },
+        {
+          "title": "Mechanical: Supporto",
+          "description": "Supporto trasversale alle attività del team meccanico.",
+          "positions": 1
+        },
+        {
+          "title": "Electronics",
+          "description": "Progettazione di un'unica scheda basata su componenti già disponibili in laboratorio, con ZephyrOS a bordo, e sviluppo del firmware per l'attuazione del recupero e la gestione di sensori e dati di navigazione.",
+          "positions": 1
+        },
+        {
+          "title": "RF",
+          "description": "Telemetria in modulazione LoRa e gestione del GPS.",
+          "positions": 1
+        },
+        {
+          "title": "Controls",
+          "description": "Algoritmo di controllo per la stima dell'apogeo e l'apertura del paracadute.",
+          "positions": 1
+        }
+      ],
+      "applicationUrl": "https://forms.gle/iapAvx1BrWjxRhkh7",
+      "applicationLabel": "Candidati per Ignis & Fulgor",
+      "applicationNote": "Il modulo richiede l'accesso con un account Unifi."
+    },
+    {
+      "tag": "Ricerca",
+      "title": "Aerodynamic Model Development",
+      "tagline": "Confronto tra modelli di turbolenza CFD per simulare l'aerodinamica dei razzi del team.",
+      "description": "Il progetto confronta i principali modelli CFD di turbolenza per individuare il più adatto a simulare l'aerodinamica di razzi secondo le specifiche di missione, utilizzando OpenFOAM e Ansys Fluent. Il lavoro comprende la generazione di mesh, gli studi di convergenza e le campagne di simulazione, con validazione su dati di letteratura.",
+      "image": {
+        "src": "/assets/amd-patch.svg",
+        "width": 1000,
+        "height": 1000,
+        "alt": "La patch di missione del progetto Aerodynamic Model Development"
+      },
+      "roles": [
+        {
+          "title": "Aerodynamics Researcher",
+          "description": "Generazione delle mesh, studi di convergenza e campagne di simulazione con OpenFOAM e Ansys Fluent, confronto tra i modelli di turbolenza e validazione dei risultati su dati di letteratura.",
+          "positions": 3
+        },
+        {
+          "title": "Logistics and Integration Engineer",
+          "description": "Pianificazione delle attività, gestione delle risorse di calcolo e delle scadenze, coordinamento tra i membri e integrazione dei risultati nella documentazione di progetto. Ruolo molto attinente al percorso di Ingegneria Gestionale.",
+          "positions": 1
+        },
+        {
+          "title": "Informatics Engineer",
+          "description": "Scripting per automatizzare pre-processing, lancio delle simulazioni e post-processing dei dati, e applicazione di tecniche di ottimizzazione del codice per ridurre i tempi di calcolo.",
+          "positions": 1
+        }
+      ],
+      "applicationUrl": "https://forms.gle/8aNDJfRfAQbz5VMC6",
+      "applicationLabel": "Candidati per Aerodynamic Model Development",
+      "applicationNote": "Il modulo richiede l'accesso con un account Unifi."
+    }
+  ]
 }

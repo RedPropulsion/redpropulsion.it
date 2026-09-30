@@ -1,10 +1,11 @@
 "use client";
 
 import { ChevronDown } from "lucide-react";
-import { useState } from "react";
+import { useId, useState } from "react";
 
 export function FaqItem({ question, answer }: { question: string; answer: string }) {
     const [isOpen, setIsOpen] = useState(false);
+    const panelId = useId();
 
     return (
         <div
@@ -17,7 +18,8 @@ export function FaqItem({ question, answer }: { question: string; answer: string
             <button
                 onClick={() => setIsOpen(!isOpen)}
                 aria-expanded={isOpen}
-                className="w-full flex items-center justify-between cursor-pointer p-4 md:p-6 font-orbitron text-base md:text-xl text-left text-gray-200 hover:text-white transition-colors duration-300"
+                aria-controls={panelId}
+                className="w-full flex items-center justify-between cursor-pointer p-4 md:p-6 font-condensed text-lg md:text-xl leading-snug text-left text-gray-200 hover:text-white transition-colors duration-300"
             >
                 <span>{question}</span>
                 <ChevronDown
@@ -27,11 +29,14 @@ export function FaqItem({ question, answer }: { question: string; answer: string
             </button>
 
             <div
-                className={`grid transition-[grid-template-rows,opacity,margin] duration-500 ease-[cubic-bezier(0.2,0,0,1)] ${isOpen ? "grid-rows-[1fr] opacity-100 mb-6" : "grid-rows-[0fr] opacity-0"
-                    }`}
+                id={panelId}
+                aria-hidden={!isOpen}
+                inert={!isOpen}
+                hidden={!isOpen}
+                className="mb-6"
             >
-                <div className="overflow-hidden px-6 text-lg font-condensed leading-8 text-foreground-dim selection:bg-primary/30">
-                    <div className="border-t border-white/10 pt-6">
+                <div className="px-4 md:px-6 pb-1 break-words text-lg font-condensed leading-8 text-foreground-dim selection:bg-primary/30">
+                    <div className="border-t border-white/10 pt-6 whitespace-pre-line">
                         {answer}
                     </div>
                 </div>

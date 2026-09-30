@@ -1,5 +1,5 @@
 import RichText from "./RichText";
-import Image from "next/image";
+import SocialIcon from "./SocialIcon";
 
 type Props = {
   title: string;
@@ -41,15 +41,10 @@ export default function Footer({ title, body, social_links }: Props) {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="block group"
-                    aria-label={`Visit our ${item.name}`}
+                    aria-label={`Visita il nostro profilo ${item.name}`}
                   >
-                    <div className="relative w-10 h-10 md:w-12 md:h-12 overflow-hidden rounded-full border border-white/10 bg-white/5 p-2 transition-all duration-700 ease-[cubic-bezier(0.2,0,0,1)] group-hover:scale-110 group-hover:bg-primary/20 group-hover:border-primary/50 group-hover:shadow-[0_0_15px_rgba(211,47,47,0.5)]">
-                      <Image
-                        src={item.icon}
-                        alt={item.name}
-                        fill
-                        className="object-contain p-[8px] opacity-70 group-hover:opacity-100 transition-opacity duration-300"
-                      />
+                    <div className="relative flex items-center justify-center text-white/70 group-hover:text-primary w-11 h-11 md:w-12 md:h-12 overflow-hidden rounded-full border border-white/10 bg-white/5 p-2 transition-all duration-700 ease-[cubic-bezier(0.2,0,0,1)] group-hover:scale-110 group-hover:bg-primary/20 group-hover:border-primary/50 group-hover:shadow-[0_0_15px_rgba(211,47,47,0.5)]">
+                      <SocialIcon name={item.name} />
                     </div>
                   </a>
                 </li>

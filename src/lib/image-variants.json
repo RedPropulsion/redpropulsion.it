@@ -1,0 +1,382 @@
+{
+  "/Altium_Logo_WHT.png": [
+    {
+      "src": "/optimized/Altium_Logo_WHT-96.webp",
+      "width": 96
+    },
+    {
+      "src": "/optimized/Altium_Logo_WHT-320.webp",
+      "width": 320
+    }
+  ],
+  "/assets/partners/aisler-official.png": [
+    {
+      "src": "/optimized/assets/partners/aisler-official-96.webp",
+      "width": 96
+    },
+    {
+      "src": "/optimized/assets/partners/aisler-official-300.webp",
+      "width": 300
+    }
+  ],
+  "/assets/partners/designwrap-light.webp": [
+    {
+      "src": "/optimized/assets/partners/designwrap-light-96.webp",
+      "width": 96
+    },
+    {
+      "src": "/optimized/assets/partners/designwrap-light-320.webp",
+      "width": 320
+    }
+  ],
+  "/assets/sponsor-redai.webp": [
+    {
+      "src": "/optimized/assets/sponsor-redai-96.webp",
+      "width": 96
+    },
+    {
+      "src": "/optimized/assets/sponsor-redai-320.webp",
+      "width": 320
+    }
+  ],
+  "/assets/team-01.webp": [
+    {
+      "src": "/optimized/assets/team-01-640.webp",
+      "width": 640
+    },
+    {
+      "src": "/optimized/assets/team-01-933.webp",
+      "width": 933
+    }
+  ],
+  "/assets/team-02.webp": [
+    {
+      "src": "/optimized/assets/team-02-640.webp",
+      "width": 640
+    },
+    {
+      "src": "/optimized/assets/team-02-1280.webp",
+      "width": 1280
+    },
+    {
+      "src": "/optimized/assets/team-02-1400.webp",
+      "width": 1400
+    }
+  ],
+  "/assets/team-03.webp": [
+    {
+      "src": "/optimized/assets/team-03-640.webp",
+      "width": 640
+    },
+    {
+      "src": "/optimized/assets/team-03-933.webp",
+      "width": 933
+    }
+  ],
+  "/assets/team-05.webp": [
+    {
+      "src": "/optimized/assets/team-05-640.webp",
+      "width": 640
+    },
+    {
+      "src": "/optimized/assets/team-05-933.webp",
+      "width": 933
+    }
+  ],
+  "/assets/team-07.webp": [
+    {
+      "src": "/optimized/assets/team-07-640.webp",
+      "width": 640
+    },
+    {
+      "src": "/optimized/assets/team-07-1280.webp",
+      "width": 1280
+    },
+    {
+      "src": "/optimized/assets/team-07-1400.webp",
+      "width": 1400
+    }
+  ],
+  "/assets/team-08.webp": [
+    {
+      "src": "/optimized/assets/team-08-640.webp",
+      "width": 640
+    },
+    {
+      "src": "/optimized/assets/team-08-1280.webp",
+      "width": 1280
+    },
+    {
+      "src": "/optimized/assets/team-08-1400.webp",
+      "width": 1400
+    }
+  ],
+  "/assets/team-09.webp": [
+    {
+      "src": "/optimized/assets/team-09-640.webp",
+      "width": 640
+    },
+    {
+      "src": "/optimized/assets/team-09-1280.webp",
+      "width": 1280
+    },
+    {
+      "src": "/optimized/assets/team-09-1400.webp",
+      "width": 1400
+    }
+  ],
+  "/assets/team-10.webp": [
+    {
+      "src": "/optimized/assets/team-10-640.webp",
+      "width": 640
+    },
+    {
+      "src": "/optimized/assets/team-10-1280.webp",
+      "width": 1280
+    },
+    {
+      "src": "/optimized/assets/team-10-1400.webp",
+      "width": 1400
+    }
+  ],
+  "/assets/team-12.webp": [
+    {
+      "src": "/optimized/assets/team-12-640.webp",
+      "width": 640
+    },
+    {
+      "src": "/optimized/assets/team-12-1280.webp",
+      "width": 1280
+    },
+    {
+      "src": "/optimized/assets/team-12-1400.webp",
+      "width": 1400
+    }
+  ],
+  "/DSA00993.jpg": [
+    {
+      "src": "/optimized/DSA00993-96.webp",
+      "width": 96
+    },
+    {
+      "src": "/optimized/DSA00993-320.webp",
+      "width": 320
+    }
+  ],
+  "/foto.jpeg": [
+    {
+      "src": "/optimized/foto-640.webp",
+      "width": 640
+    },
+    {
+      "src": "/optimized/foto-1280.webp",
+      "width": 1280
+    },
+    {
+      "src": "/optimized/foto-1920.webp",
+      "width": 1920
+    }
+  ],
+  "/github-logo-white.png": [
+    {
+      "src": "/optimized/github-logo-white-96.webp",
+      "width": 96
+    },
+    {
+      "src": "/optimized/github-logo-white-230.webp",
+      "width": 230
+    }
+  ],
+  "/github-logo.png": [
+    {
+      "src": "/optimized/github-logo-96.webp",
+      "width": 96
+    },
+    {
+      "src": "/optimized/github-logo-240.webp",
+      "width": 240
+    }
+  ],
+  "/InBug-White.png": [
+    {
+      "src": "/optimized/InBug-White-96.webp",
+      "width": 96
+    },
+    {
+      "src": "/optimized/InBug-White-320.webp",
+      "width": 320
+    }
+  ],
+  "/instagram-logo-white.png": [
+    {
+      "src": "/optimized/instagram-logo-white-96.webp",
+      "width": 96
+    },
+    {
+      "src": "/optimized/instagram-logo-white-320.webp",
+      "width": 320
+    }
+  ],
+  "/instagram-logo.png": [
+    {
+      "src": "/optimized/instagram-logo-96.webp",
+      "width": 96
+    },
+    {
+      "src": "/optimized/instagram-logo-320.webp",
+      "width": 320
+    }
+  ],
+  "/logo-alhof-b-1.png": [
+    {
+      "src": "/optimized/logo-alhof-b-1-96.webp",
+      "width": 96
+    },
+    {
+      "src": "/optimized/logo-alhof-b-1-214.webp",
+      "width": 214
+    }
+  ],
+  "/LogoREDPROPULSION_Bianco.png": [
+    {
+      "src": "/optimized/LogoREDPROPULSION_Bianco-96.webp",
+      "width": 96
+    },
+    {
+      "src": "/optimized/LogoREDPROPULSION_Bianco-320.webp",
+      "width": 320
+    }
+  ],
+  "/LogoREDPROPULSION_Nero.png": [
+    {
+      "src": "/optimized/LogoREDPROPULSION_Nero-96.webp",
+      "width": 96
+    },
+    {
+      "src": "/optimized/LogoREDPROPULSION_Nero-320.webp",
+      "width": 320
+    }
+  ],
+  "/placeholderRED.webp": [
+    {
+      "src": "/optimized/placeholderRED-160.webp",
+      "width": 160
+    },
+    {
+      "src": "/optimized/placeholderRED-400.webp",
+      "width": 400
+    },
+    {
+      "src": "/optimized/placeholderRED-800.webp",
+      "width": 800
+    }
+  ],
+  "/placeholderRED_rect.webp": [
+    {
+      "src": "/optimized/placeholderRED_rect-160.webp",
+      "width": 160
+    },
+    {
+      "src": "/optimized/placeholderRED_rect-400.webp",
+      "width": 400
+    },
+    {
+      "src": "/optimized/placeholderRED_rect-650.webp",
+      "width": 650
+    }
+  ],
+  "/profilePictures/25-26/AhmedMassimoRomdhani.webp": [
+    {
+      "src": "/optimized/profilePictures/25-26/AhmedMassimoRomdhani-160.webp",
+      "width": 160
+    },
+    {
+      "src": "/optimized/profilePictures/25-26/AhmedMassimoRomdhani-400.webp",
+      "width": 400
+    },
+    {
+      "src": "/optimized/profilePictures/25-26/AhmedMassimoRomdhani-800.webp",
+      "width": 800
+    }
+  ],
+  "/profilePictures/25-26/AntonioEnriqueSignorino.webp": [
+    {
+      "src": "/optimized/profilePictures/25-26/AntonioEnriqueSignorino-160.webp",
+      "width": 160
+    },
+    {
+      "src": "/optimized/profilePictures/25-26/AntonioEnriqueSignorino-400.webp",
+      "width": 400
+    },
+    {
+      "src": "/optimized/profilePictures/25-26/AntonioEnriqueSignorino-800.webp",
+      "width": 800
+    }
+  ],
+  "/profilePictures/25-26/CamillaCatelani.webp": [
+    {
+      "src": "/optimized/profilePictures/25-26/CamillaCatelani-160.webp",
+      "width": 160
+    },
+    {
+      "src": "/optimized/profilePictures/25-26/CamillaCatelani-400.webp",
+      "width": 400
+    },
+    {
+      "src": "/optimized/profilePictures/25-26/CamillaCatelani-800.webp",
+      "width": 800
+    }
+  ],
+  "/profilePictures/25-26/LorenzoBellina.webp": [
+    {
+      "src": "/optimized/profilePictures/25-26/LorenzoBellina-160.webp",
+      "width": 160
+    },
+    {
+      "src": "/optimized/profilePictures/25-26/LorenzoBellina-400.webp",
+      "width": 400
+    },
+    {
+      "src": "/optimized/profilePictures/25-26/LorenzoBellina-800.webp",
+      "width": 800
+    }
+  ],
+  "/profilePictures/25-26/NiccoloBertini.webp": [
+    {
+      "src": "/optimized/profilePictures/25-26/NiccoloBertini-160.webp",
+      "width": 160
+    },
+    {
+      "src": "/optimized/profilePictures/25-26/NiccoloBertini-400.webp",
+      "width": 400
+    },
+    {
+      "src": "/optimized/profilePictures/25-26/NiccoloBertini-560.webp",
+      "width": 560
+    }
+  ],
+  "/profilePictures/25-26/SabrinaBaldini.webp": [
+    {
+      "src": "/optimized/profilePictures/25-26/SabrinaBaldini-160.webp",
+      "width": 160
+    },
+    {
+      "src": "/optimized/profilePictures/25-26/SabrinaBaldini-400.webp",
+      "width": 400
+    },
+    {
+      "src": "/optimized/profilePictures/25-26/SabrinaBaldini-800.webp",
+      "width": 800
+    }
+  ],
+  "/SolidWorks-logo.png": [
+    {
+      "src": "/optimized/SolidWorks-logo-96.webp",
+      "width": 96
+    },
+    {
+      "src": "/optimized/SolidWorks-logo-320.webp",
+      "width": 320
+    }
+  ]
+}

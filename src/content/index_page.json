@@ -23,23 +23,56 @@
       "title": "La nostra storia",
       "text": "Il nostro team nasce nel novembre del 2022, e ad oggi si compone di circa 50 membri provenienti da vari ambiti del settore ingegneristico. Ogni membro mette in campo le proprie conoscenze in un lavoro multidisciplinare, le cui fasi di progetto e sviluppo spaziano dalla meccanica all’elettronica, dal controllo al software, sino alla fase di gestione del progetto in ogni sua minima parte.\n\nIl nostro lavoro nasce con lo scopo di mettere in campo le competenze apprese durante le lezioni, cercando di sviluppare e dare concretezza a idee innovative, offrendo agli studenti l’opportunità di crescere anche in ambito professionale, oltre che nelle competenze.",
       "images": [
-        "/DSA00993.jpg",
-        "/foto.jpeg"
+        "/assets/team-07.webp"
+      ],
+      "imageAlt": "Il team assembla Redaster in laboratorio",
+      "gallery": [
+        {
+          "src": "/assets/team-12.webp",
+          "alt": "Due membri del team con Redaster"
+        },
+        {
+          "src": "/assets/team-02.webp",
+          "alt": "Lavoro sui componenti elettronici"
+        },
+        {
+          "src": "/assets/team-08.webp",
+          "alt": "Redaster sul banco del laboratorio"
+        },
+        {
+          "src": "/assets/team-01.webp",
+          "alt": "Lavoro su una scheda elettronica",
+          "fit": "contain"
+        },
+        {
+          "src": "/assets/team-09.webp",
+          "alt": "Il team a Space Expo"
+        },
+        {
+          "src": "/assets/team-03.webp",
+          "alt": "Collegamento dei cavi del razzo",
+          "fit": "contain"
+        },
+        {
+          "src": "/assets/team-10.webp",
+          "alt": "Il team accanto al furgone"
+        },
+        {
+          "src": "/assets/team-05.webp",
+          "alt": "Redaster in giardino",
+          "fit": "contain"
+        }
       ]
     }
   ],
   "statistics": [
     {
+      "name": "anno di fondazione",
+      "value": "2022"
+    },
+    {
       "name": "membri",
       "value": "50+"
-    },
-    {
-      "name": "dipartimenti",
-      "value": "6"
-    },
-    {
-      "name": "ultimo lancio",
-      "value": "Nov '24"
     },
     {
       "name": "lanci riusciti",

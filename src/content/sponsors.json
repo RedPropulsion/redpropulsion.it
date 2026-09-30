@@ -1,32 +1,81 @@
 {
   "sponsors": [
     {
-      "name": "Altium",
-      "image": "/Altium_Logo_WHT.png",
-      "url": "https://www.altium.com/",
-      "description": "Software di progettazione PCB per lo sviluppo delle nostre schede di controllo.",
-      "scale": "0.8"
-    },
-    {
-      "name": "Solidworks",
-      "image": "/SolidWorks-logo.png",
-      "url": "https://www.solidworks.com/",
-      "description": "Soluzioni CAD 3D essenziali per la progettazione meccanica dei componenti strutturali.",
-      "scale": "1.7"
-    },
-    {
-      "name": "Molex",
-      "image": "/Molex-Logo.svg",
-      "url": "https://www.molex.com/",
-      "description": "Connettori di alta precisione e qualità per i sottosistemi elettronici di bordo.",
-      "scale": "1.2"
+      "name": "AISLER",
+      "image": "/assets/partners/aisler-official.png",
+      "url": "https://aisler.net/",
+      "description": "Produzione e assemblaggio di circuiti stampati.",
+      "logoWidth": 240,
+      "logoHeight": 64
     },
     {
       "name": "Alhof",
       "image": "/logo-alhof-b-1.png",
       "url": "https://www.alhof.com/",
       "description": "Cablaggi RF ad alta affidabilità per il sistema di telemetria e telecomunicazioni.",
-      "scale": "1.0"
+      "scale": "1.0",
+      "logoWidth": 220,
+      "logoHeight": 64
+    },
+    {
+      "name": "Altium",
+      "image": "/Altium_Logo_WHT.png",
+      "url": "https://www.altium.com/",
+      "description": "Software di progettazione PCB per lo sviluppo delle nostre schede di controllo.",
+      "scale": "1.0",
+      "logoWidth": 220,
+      "logoHeight": 64
+    },
+    {
+      "name": "Ansys",
+      "image": "/assets/partners/ansys-light.svg",
+      "url": "https://ansys.synopsys.com/",
+      "description": "Software di simulazione per l’ingegneria.",
+      "logoWidth": 220,
+      "logoHeight": 68
+    },
+    {
+      "name": "Design Wrap",
+      "image": "/assets/partners/designwrap-light.webp",
+      "url": "https://www.designwrap.it/",
+      "description": "Wrapping e applicazione di pellicole adesive.",
+      "logoWidth": 230,
+      "logoHeight": 88
+    },
+    {
+      "name": "Maker House",
+      "image": "/assets/partners/makerhouse-official.svg",
+      "description": "Stampa 3D, prototipazione e progettazione di componenti.",
+      "url": "https://www.makerhouse.it/",
+      "logoWidth": 150,
+      "logoHeight": 84
+    },
+    {
+      "name": "Molex",
+      "image": "/Molex-Logo.svg",
+      "url": "https://www.molex.com/",
+      "description": "Connettori di alta precisione e qualità per i sottosistemi elettronici di bordo.",
+      "scale": "1.0",
+      "logoWidth": 140,
+      "logoHeight": 88
+    },
+    {
+      "name": "RedAI",
+      "image": "/assets/sponsor-redai.webp",
+      "url": "https://www.redai.it/",
+      "description": "Soluzioni software, automazione e gestione documentale.",
+      "logoWidth": 220,
+      "logoHeight": 64
+    },
+    {
+      "name": "SOLIDWORKS",
+      "image": "/SolidWorks-logo.png",
+      "url": "https://www.solidworks.com/",
+      "description": "Soluzioni CAD 3D essenziali per la progettazione meccanica dei componenti strutturali.",
+      "scale": "1.0",
+      "logoFit": "cover",
+      "logoWidth": 240,
+      "logoHeight": 64
     }
   ]
 }

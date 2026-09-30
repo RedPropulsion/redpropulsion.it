@@ -21,7 +21,7 @@ export default function UnderConstruction() {
           Torna alla Home
         </Link>
         <a
-          href="https://www.instagram.com/redpropulsion/"
+          href="https://www.instagram.com/red_propulsion/"
           target="_blank"
           rel="noopener noreferrer"
           className="px-6 py-3 rounded-lg border border-primary text-primary font-condensed font-bold text-lg hover:bg-primary/10 transition-colors duration-200"

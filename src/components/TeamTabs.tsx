@@ -3,26 +3,8 @@
 import React, { useState } from 'react';
 import TeamCard from './TeamCard';
 
-const PLACEHOLDER = '/placeholderRED.webp';
-const PROFILE_PIC_DIR = '/profilePictures/25-26/';
-
-// --- Types ---
-
-export type Member = {
-  firstName: string;
-  lastName?: string;
-  role: string;
-  linkedin?: string;
-  imgAvail?: boolean;
-  isHead?: boolean | string;
-  boardRole?: string;
-};
-
-export type Department = {
-  title: string;
-  head?: string;
-  members: Member[];
-};
+import type { Member, Department } from '@/lib/team-types';
+import { getProfilePicture } from '@/lib/team-profiles.mjs';
 
 type Props = {
   departments: Department[];
@@ -59,23 +41,6 @@ function toLinkedIn(val: string | undefined): string | undefined {
     .replace(/[.']/g, '')
     .replace(/\s+/g, '-');
   return `https://linkedin.com/in/${slug}`;
-}
-
-/** Replace accented chars and remove punctuation for file name matching */
-function sanitizeFileName(name: string): string {
-  const accents: Record<string, string> = {
-    'ò': 'o', 'è': 'e', 'à': 'a', 'é': 'e', 'ù': 'u', 'ì': 'i',
-  };
-  return name
-    .replace(/[òèàéùì]/g, (char) => accents[char] || char)
-    .replace(/[.'`´]/g, '')
-    .replace(/\s+/g, '');
-}
-
-/** Build profile picture path for a member */
-function getProfilePicture(m: Member): string {
-  if (!m.imgAvail) return PLACEHOLDER;
-  return `${PROFILE_PIC_DIR}${sanitizeFileName(m.firstName + (m.lastName || ''))}.webp`;
 }
 
 /** Build the LinkedIn URL for a member */
@@ -119,6 +84,7 @@ export default function TeamTabs({ departments, boardMembers }: Props) {
           {mainTabs.map(tab => (
             <button
               key={tab}
+              aria-pressed={activeMainTab === tab}
               onClick={() => setActiveMainTab(tab)}
               className={`group/tab px-4 py-2 md:px-7 md:py-3 font-condensed font-bold text-xs md:text-base uppercase tracking-wider transition-all duration-500 cursor-pointer border ${activeMainTab === tab
                 ? 'border-primary/60 bg-primary/10 text-white shadow-[0_0_15px_rgba(211,47,47,0.2)]'
@@ -134,6 +100,8 @@ export default function TeamTabs({ departments, boardMembers }: Props) {
         </div>
 
         <div
+          inert={activeMainTab !== 'Avionics'}
+          aria-hidden={activeMainTab !== 'Avionics'}
           className={`md:absolute md:top-full left-0 right-0 mt-4 md:mt-6 flex flex-wrap justify-center gap-1 md:gap-2 transition-[max-height,opacity] ease-out relative z-20 ${activeMainTab === 'Avionics' ? 'max-h-20 opacity-100 pointer-events-auto duration-500' : 'max-h-0 overflow-hidden md:max-h-20 md:overflow-visible opacity-0 pointer-events-none duration-300 delay-200'}`}
         >
           {avionicsDepts.map((dept, i) => {
@@ -142,6 +110,7 @@ export default function TeamTabs({ departments, boardMembers }: Props) {
             return (
               <button
                 key={dept.title}
+                aria-pressed={activeSubTab === dept.title}
                 onClick={() => setActiveSubTab(dept.title)}
                 className={`relative group/sub px-3 md:px-5 py-2 font-condensed font-bold text-xs md:text-sm uppercase tracking-[0.25em] flex items-center justify-center cursor-pointer ease-out ${activeMainTab === 'Avionics' ? 'opacity-100 translate-y-0 transition-all duration-700' : 'opacity-0 -translate-y-2 transition-all duration-300'}`}
                 style={{
@@ -156,7 +125,7 @@ export default function TeamTabs({ departments, boardMembers }: Props) {
                 </span>
                 
                 {/* Text - Brighter and scales slightly on hover/active */}
-                <span className={`px-2 transition-all duration-500 ${activeSubTab === dept.title ? 'text-white' : 'text-white/40 group-hover/sub:text-white/80'}`}>
+                <span className={`px-2 transition-all duration-500 ${activeSubTab === dept.title ? 'text-white' : 'text-white/70 group-hover/sub:text-white/80'}`}>
                   {subName}
                 </span>
 
@@ -172,6 +141,7 @@ export default function TeamTabs({ departments, boardMembers }: Props) {
 
       {/* Members Grid with Fade Transition */}
       <div className="animate-fade-in-up delay-500" key={currentActualTab}>
+        <h2 className="sr-only">{currentActualTab}</h2>
 
         {/* Side-by-side layout: Leads on left, Regulars on right */}
         {leads.length > 0 && regulars.length > 0 ? (
