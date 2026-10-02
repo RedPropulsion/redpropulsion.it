@@ -155,8 +155,8 @@ export default function Navbar() {
             {ctaLink && (
               <Link
                 href={ctaLink.url}
-                target="_blank"
-                rel="noopener noreferrer"
+                target={ctaLink.url.startsWith("http") ? "_blank" : undefined}
+                rel={ctaLink.url.startsWith("http") ? "noopener noreferrer" : undefined}
                 className="hidden xl:flex items-center justify-center group/cta relative transition-all duration-500 h-11 w-32 overflow-hidden"
                 style={{
                   clipPath: "polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px)"
@@ -230,9 +230,9 @@ export default function Navbar() {
           <div className="px-8 pb-10 pt-4 flex justify-center">
             <Link
               href={ctaLink.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setMenuOpen(false)}
+              target={ctaLink.url.startsWith("http") ? "_blank" : undefined}
+              rel={ctaLink.url.startsWith("http") ? "noopener noreferrer" : undefined}
+              onClick={(e) => handleMobileNav(e, ctaLink.url)}
               className="w-full max-w-[200px] h-12 flex items-center justify-center border border-primary/40 text-white font-condensed font-bold text-sm tracking-[0.3em] uppercase transition-all duration-500 active:bg-primary/20"
               style={{
                 clipPath: "polygon(10px 0, 100% 0, 100% calc(100% - 10px), calc(100% - 10px) 100%, 0 100%, 0 10px)"
