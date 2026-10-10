@@ -3,6 +3,44 @@
   "description": "Il team è organizzato per progetti, ciascuno con una scadenza definita e un numero minimo e massimo di membri. Scegli il progetto a cui vuoi partecipare e scopri i ruoli disponibili.",
   "projects": [
     {
+      "tag": "Sviluppo in corso",
+      "title": "LILIUM",
+      "tagline": "Il futuro razzo di punta di Red Propulsion, con motore ibrido.",
+      "description": "LILIUM sarà il razzo di punta di Red Propulsion: un vettore a propulsione ibrida che parteciperà alla competizione europea EuRoC. Il progetto è in sviluppo da un anno e cerca nuove persone per la progettazione del motore e del razzo, le simulazioni fluidodinamiche e le attività di test, comprese elettronica e software. Sono aperte anche le candidature per la gestione dei sottoprogetti che compongono LILIUM e per la gestione degli acquisti e dell’ufficio tecnico.",
+      "image": {
+        "src": "/assets/lilium.png",
+        "width": 1254,
+        "height": 1254,
+        "alt": "Emblema LILIUM con razzo e giglio, progetto a propulsione ibrida di Red Propulsion",
+        "crop": "circle"
+      },
+      "roles": [
+        {
+          "title": "Project Manager",
+          "description": "Gestione dei sottoprogetti che compongono LILIUM, con coordinamento delle attività, pianificazione del lavoro e monitoraggio delle tempistiche.",
+          "positions": 1
+        },
+        {
+          "title": "Responsabile acquisti e ufficio tecnico",
+          "description": "Gestione degli acquisti e coordinamento delle attività dell’ufficio tecnico a supporto dello sviluppo.",
+          "positions": 1
+        },
+        {
+          "title": "Test Engineer — Elettronica e software",
+          "description": "Preparazione e svolgimento dei test, con attività di elettronica e software a supporto delle prove.",
+          "positions": 1
+        },
+        {
+          "title": "Mechanical Design & CFD Engineer",
+          "description": "Progettazione meccanica dei componenti, supporto alla loro integrazione e simulazioni fluidodinamiche per lo sviluppo del motore e del razzo.",
+          "positions": 1
+        }
+      ],
+      "applicationUrl": "https://docs.google.com/forms/u/0/d/1Xkbr0Sb--BlJC5YquS2sxMnMWv5kx4BLhy5PchGvTm0/viewform?usp=drivesdk&chromeless=1&edit_requested=true",
+      "applicationLabel": "Candidati per LILIUM",
+      "applicationNote": "Usa il modulo per inviare la tua candidatura al progetto LILIUM."
+    },
+    {
       "tag": "Sviluppo",
       "title": "Ignis & Fulgor",
       "tagline": "I due razzetti gemelli della Season 26/27: due team indipendenti, un solo giorno di lancio.",

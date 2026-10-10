@@ -37,6 +37,20 @@
       "width": 570
     }
   ],
+  "/assets/lilium.png": [
+    {
+      "src": "/optimized/assets/lilium-190.webp",
+      "width": 190
+    },
+    {
+      "src": "/optimized/assets/lilium-380.webp",
+      "width": 380
+    },
+    {
+      "src": "/optimized/assets/lilium-570.webp",
+      "width": 570
+    }
+  ],
   "/assets/partners/aisler-official.png": [
     {
       "src": "/optimized/assets/partners/aisler-official-96.webp",

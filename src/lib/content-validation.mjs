@@ -14,6 +14,7 @@ export function validateProjects(content, label = "projects_page.json") {
     titles.add(project.title);
     text(project.image?.src, `${path}.image.src`);
     text(project.image?.alt, `${path}.image.alt`);
+    if (project.image.crop !== undefined && project.image.crop !== "" && project.image.crop !== "circle") fail(`${path}.image.crop`, "usare circle o lasciare vuoto");
     if (!/^\/(?!\/)/.test(project.image.src)) fail(`${path}.image.src`, "usare un percorso locale assoluto");
     for (const key of ["width", "height"]) {
       if (!Number.isInteger(project.image[key]) || project.image[key] <= 0) fail(`${path}.image.${key}`, "intero positivo obbligatorio");

@@ -117,6 +117,7 @@ content:
               - { name: alt, label: Alternative text, type: string, required: true }
               - { name: width, label: Width, type: number, required: true, options: { min: 1 } }
               - { name: height, label: Height, type: number, required: true, options: { min: 1 } }
+              - { name: crop, label: "Crop (circle or empty)", type: string }
           - name: roles
             label: Available roles
             type: object
