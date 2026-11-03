@@ -1,12 +1,12 @@
 {
-  "title": "Progetti aperti",
-  "description": "Il team è organizzato per progetti, ciascuno con una scadenza definita e un numero minimo e massimo di membri. Scegli il progetto a cui vuoi partecipare e scopri i ruoli disponibili.",
+  "title": "I nostri progetti",
+  "description": "Il team sviluppa razzi e sistemi attraverso progetti con obiettivi e tempi definiti. Scopri le attività in corso e i ruoli coinvolti. Le candidature per la stagione 2026/27 sono chiuse: segui i nostri canali per sapere quando riapriranno.",
   "projects": [
     {
       "tag": "Sviluppo in corso",
       "title": "LILIUM",
       "tagline": "Il futuro razzo di punta di Red Propulsion, con motore ibrido.",
-      "description": "LILIUM sarà il razzo di punta di Red Propulsion: un vettore a propulsione ibrida che parteciperà alla competizione europea EuRoC. Il progetto è in sviluppo da un anno e cerca nuove persone per la progettazione del motore e del razzo, le simulazioni fluidodinamiche e le attività di test, comprese elettronica e software. Sono aperte anche le candidature per la gestione dei sottoprogetti che compongono LILIUM e per la gestione degli acquisti e dell’ufficio tecnico.",
+      "description": "LILIUM sarà il razzo di punta di Red Propulsion: un vettore a propulsione ibrida che parteciperà alla competizione europea EuRoC. Il progetto è in sviluppo da un anno e comprende la progettazione del motore e del razzo, le simulazioni fluidodinamiche, le attività di test, l’elettronica, il software, la gestione dei sottoprogetti, gli acquisti e l’ufficio tecnico.",
       "image": {
         "src": "/assets/lilium.png",
         "width": 1254,
@@ -37,8 +37,9 @@
         }
       ],
       "applicationUrl": "https://docs.google.com/forms/u/0/d/1Xkbr0Sb--BlJC5YquS2sxMnMWv5kx4BLhy5PchGvTm0/viewform?usp=drivesdk&chromeless=1&edit_requested=true",
+      "applicationsOpen": false,
       "applicationLabel": "Candidati per LILIUM",
-      "applicationNote": "Usa il modulo per inviare la tua candidatura al progetto LILIUM."
+      "applicationNote": "Seguici sui nostri canali per le prossime aperture."
     },
     {
       "tag": "Sviluppo",
@@ -89,8 +90,9 @@
         }
       ],
       "applicationUrl": "https://forms.gle/iapAvx1BrWjxRhkh7",
+      "applicationsOpen": false,
       "applicationLabel": "Candidati per Ignis & Fulgor",
-      "applicationNote": "Il modulo richiede l'accesso con un account Unifi."
+      "applicationNote": "Seguici sui nostri canali per le prossime aperture."
     },
     {
       "tag": "Ricerca",
@@ -121,8 +123,9 @@
         }
       ],
       "applicationUrl": "https://forms.gle/8aNDJfRfAQbz5VMC6",
+      "applicationsOpen": false,
       "applicationLabel": "Candidati per Aerodynamic Model Development",
-      "applicationNote": "Il modulo richiede l'accesso con un account Unifi."
+      "applicationNote": "Seguici sui nostri canali per le prossime aperture."
     }
   ]
 }

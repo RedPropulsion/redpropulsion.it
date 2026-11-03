@@ -10,6 +10,7 @@ export function validateProjects(content, label = "projects_page.json") {
   content.projects.forEach((project, index) => {
     const path = `projects[${index}]`;
     for (const key of ["tag", "title", "tagline", "description", "applicationLabel", "applicationNote"]) text(project?.[key], `${path}.${key}`);
+    if (typeof project?.applicationsOpen !== "boolean") fail(`${path}.applicationsOpen`, "valore booleano obbligatorio");
     if (titles.has(project.title)) fail(`${path}.title`, "titolo duplicato");
     titles.add(project.title);
     text(project.image?.src, `${path}.image.src`);

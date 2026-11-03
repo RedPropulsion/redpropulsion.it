@@ -2,7 +2,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "Progetti",
-    description: "Scopri i progetti aperti di Red Propulsion.",
+    description: "Scopri i progetti di Red Propulsion.",
     alternates: { canonical: "/projects" },
     robots: { index: false, follow: true },
 };

@@ -51,8 +51,8 @@ export default function Navbar() {
   const showPreAnimation = !isHome || scrollState.started;
   const showGlass = !isHome || scrollState.glass;
 
-  const navLinks = Content.links.filter((link) => link.title !== "Join Us");
-  const ctaLink = Content.links.find((link) => link.title === "Join Us");
+  const navLinks = Content.links.filter((link) => !link.cta);
+  const ctaLink = Content.links.find((link) => link.cta);
 
   // Impedisce lo scrolling quando il menu mobile è aperto
   useEffect(() => {

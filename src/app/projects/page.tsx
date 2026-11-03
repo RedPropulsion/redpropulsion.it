@@ -6,7 +6,7 @@ import { validateProjects } from "@/lib/content-validation.mjs";
 validateProjects(content);
 
 export const metadata: Metadata = {
-  title: "Progetti",
+  title: content.title,
   description: content.description,
   alternates: { canonical: "/projects" },
 };
@@ -44,7 +44,7 @@ export default function ProjectsPage() {
                       {project.tagline}
                     </p>
                     <span className="mt-4 block font-condensed text-base text-gray-200">
-                      {positions} ruoli aperti
+                      {project.applicationsOpen ? `${positions} posti disponibili` : "Candidature chiuse"}
                     </span>
                   </div>
                   <svg className="h-6 w-6 shrink-0 text-primary transition-transform duration-300 group-open:rotate-180" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" aria-hidden="true">
@@ -54,21 +54,28 @@ export default function ProjectsPage() {
 
                 <div className="border-t border-white/10 p-5 sm:p-7 lg:p-9">
                   <p className="mb-10 max-w-3xl font-condensed text-lg leading-8 text-foreground-dim">{project.description}</p>
-                  <h3 className="mb-5 font-orbitron text-lg font-medium text-gray-200">Ruoli disponibili</h3>
+                  <h3 className="mb-5 font-orbitron text-lg font-medium text-gray-200">Ruoli del progetto</h3>
                   <dl className="mb-10 divide-y divide-white/10 border-y border-white/10">
                     {project.roles.map((role) => (
                       <div key={role.title} className="grid gap-3 py-6 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.7fr)] lg:gap-10">
                         <dt className="font-condensed text-xl font-medium leading-snug text-gray-200">
                           {role.title}
-                          {role.positions > 1 && <span className="ml-2 inline-block text-base text-foreground-dim" aria-label={`${role.positions} posti`}>×{role.positions}</span>}
+                          {project.applicationsOpen && role.positions > 1 && <span className="ml-2 inline-block text-base text-foreground-dim" aria-label={`${role.positions} posti`}>×{role.positions}</span>}
                         </dt>
                         <dd className="font-condensed text-lg leading-relaxed text-foreground-dim">{role.description}</dd>
                       </div>
                     ))}
                   </dl>
-                  <a href={project.applicationUrl} target="_blank" rel="noopener noreferrer" className="inline-flex scroll-mt-28 min-h-14 w-full items-center justify-center rocket-gradient px-6 py-4 text-center text-white font-condensed text-lg font-bold uppercase tracking-wider transition-opacity hover:opacity-90 active:opacity-80 sm:w-auto sm:text-xl" style={{ clipPath: "polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px)" }}>
-                    {project.applicationLabel}
-                  </a>
+                  {project.applicationsOpen ? (
+                    <a href={project.applicationUrl} target="_blank" rel="noopener noreferrer" className="inline-flex scroll-mt-28 min-h-14 w-full items-center justify-center rocket-gradient px-6 py-4 text-center text-white font-condensed text-lg font-bold uppercase tracking-wider transition-opacity hover:opacity-90 active:opacity-80 sm:w-auto sm:text-xl" style={{ clipPath: "polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px)" }}>
+                      {project.applicationLabel}
+                    </a>
+                  ) : (
+                    <p className="inline-flex min-h-14 w-full items-center justify-center gap-3 border border-white/15 bg-white/[0.03] px-6 py-4 text-center font-condensed text-lg font-bold uppercase tracking-wider text-foreground-dim sm:w-auto" style={{ clipPath: "polygon(12px 0, 100% 0, 100% calc(100% - 12px), calc(100% - 12px) 100%, 0 100%, 0 12px)" }}>
+                      <span aria-hidden="true" className="h-2 w-2 shrink-0 rounded-full bg-white/40" />
+                      Candidature chiuse
+                    </p>
+                  )}
                   <p className="mt-4 font-condensed text-base text-foreground-dim">{project.applicationNote}</p>
                 </div>
               </details>

@@ -128,6 +128,7 @@ content:
               - { name: description, label: Description, type: text, required: true }
               - { name: positions, label: Positions, type: number, required: true, options: { min: 1 } }
           - { name: applicationUrl, label: Application URL, type: string, required: true }
+          - { name: applicationsOpen, label: Applications open, type: boolean, required: true, default: false }
           - { name: applicationLabel, label: Application button, type: string, required: true }
           - { name: applicationNote, label: Application note, type: text, required: true }
   - name: departments_page
@@ -282,6 +283,10 @@ components:
       - name: url
         label: Url
         type: string
+      - name: cta
+        label: Highlight as navigation button
+        type: boolean
+        default: false
   card:
     label: Card
     fields:

@@ -18,8 +18,9 @@
       "url": "/contacts"
     },
     {
-      "title": "Join Us",
-      "url": "/projects"
+      "title": "Progetti",
+      "url": "/projects",
+      "cta": true
     }
   ]
 }

@@ -32,7 +32,7 @@ npm run check:export
 
 Le rotte pubbliche sono `/`, `/projects`, `/partners`, `/faq` e `/contacts`. `/departments` resta una pagina in costruzione. `/team` reindirizza a `/projects` ed è esclusa dalla sitemap e dall’indicizzazione.
 
-Progetti legge testi, ruoli, posti e moduli da `src/content/projects_page.json`, modificabile tramite Pages CMS. La precedente pagina Team è conservata in `src/components/TeamPage.tsx`, insieme al JSON, ai componenti e alle foto originali, senza essere renderizzata nella rotta pubblica.
+Progetti legge testi, ruoli, posti e moduli da `src/content/projects_page.json`, modificabile tramite Pages CMS. Il campo `applicationsOpen` controlla il collegamento al modulo e la visualizzazione dei posti: quando è `false`, il sito mostra lo stato “Candidature chiuse” e non pubblica il link. La precedente pagina Team è conservata in `src/components/TeamPage.tsx`, insieme al JSON, ai componenti e alle foto originali, senza essere renderizzata nella rotta pubblica.
 
 `public/assets/` contiene tutti i 48 file originali dell’archivio fornito il 29 settembre 2026. Le due patch SVG sono usate nella pagina Progetti; gli altri assets sono disponibili per uso futuro. La preparazione delle immagini elabora i raster di questa cartella solo quando referenziati nei contenuti JSON, evitando copie inutilizzate.
 

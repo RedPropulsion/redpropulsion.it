@@ -1,6 +1,10 @@
 # Red Propulsion | Stato tecnico e architettura
 
-Ultimo aggiornamento: 30 settembre 2026. Questo documento descrive il codice presente nella repository; le istruzioni operative sono nel README.
+Ultimo aggiornamento: 3 novembre 2026. Questo documento descrive il codice presente nella repository; le istruzioni operative sono nel README.
+
+## Chiusura delle candidature — 3 novembre 2026
+
+Le candidature per la stagione 2026/27 sono chiuse. `applicationsOpen` in `projects_page.json` controlla ogni progetto: a `false` il modulo non viene collegato, i posti non sono mostrati e la scheda presenta lo stato non interattivo “Candidature chiuse”. Navbar, pulsante Home e FAQ indirizzano ora a Progetti senza inviti ad applicare.
 
 ## 1. Stack e distribuzione
 
