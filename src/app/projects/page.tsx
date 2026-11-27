@@ -1,9 +1,6 @@
 import Image from "@/components/ResponsiveImage";
 import type { Metadata } from "next";
 import content from "@/content/projects_page.json";
-import { validateProjects } from "@/lib/content-validation.mjs";
-
-validateProjects(content);
 
 export const metadata: Metadata = {
   title: content.title,

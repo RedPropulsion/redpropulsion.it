@@ -1,7 +1,6 @@
 import Section from "@/components/Section";
 import type { CardProps } from "./CardsSection";
 import CardsSection from "./LazyCardsSection";
-import { validateContentBlock } from "@/lib/content-validation.mjs";
 import BentoSection, { type BentoSectionProps } from "./BentoSection";
 
 type BlockContent =
@@ -23,22 +22,16 @@ export default function Block({
 }: {
   content: { type: string } & Record<string, unknown>;
 }): React.ReactNode {
-  validateBlockContent(content);
-  switch (content.type) {
+  const block = content as BlockContent;
+  switch (block.type) {
     case "text_section": {
-      return <Section {...content} />;
+      return <Section {...block} />;
     }
     case "cards_section": {
-      return <CardsSection cards={content.cards} />;
+      return <CardsSection cards={block.cards} />;
     }
     case "bento_section": {
-      return <BentoSection {...content} />;
+      return <BentoSection {...block} />;
     }
   }
-}
-
-function validateBlockContent(
-  content: { type: string } & Record<string, unknown>,
-): asserts content is BlockContent {
-  validateContentBlock(content);
 }

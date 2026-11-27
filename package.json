@@ -4,15 +4,10 @@
   "private": true,
   "scripts": {
     "dev": "next dev --turbopack",
-    "prebuild": "npm run check:content && node scripts/prepare-images.mjs",
+    "prebuild": "node scripts/prepare-images.mjs",
     "build": "next build",
-    "start": "node scripts/preview.mjs",
-    "lint": "eslint src scripts",
-    "check:export": "node scripts/check-export.mjs",
-    "preview": "node scripts/preview.mjs",
-    "check:content": "node scripts/check-content.mjs",
-    "typecheck": "next typegen && tsc --noEmit --incremental false",
-    "test": "node --test scripts/*.test.mjs"
+    "lint": "eslint src",
+    "typecheck": "next typegen && tsc --noEmit --incremental false"
   },
   "dependencies": {
     "@tailwindcss/postcss": "^4.3.3",

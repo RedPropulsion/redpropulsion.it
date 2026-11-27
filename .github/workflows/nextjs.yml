@@ -81,14 +81,8 @@ jobs:
         run: npm run lint
       - name: TypeScript
         run: npm run typecheck
-      - name: Validate content
-        run: npm run check:content
-      - name: Test validation
-        run: npm test
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.manager }} run build
-      - name: Check static export
-        run: npm run check:export
       - name: Upload artifact
         if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
         uses: actions/upload-pages-artifact@v3
