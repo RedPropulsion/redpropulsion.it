@@ -1,10 +1,10 @@
 # Red Propulsion
 
-Sito dell'associazione studentesca Red Propulsion. È un progetto Next.js 16 con App Router, React 19, TypeScript e Tailwind CSS 4. La build produce file statici nella cartella `out/`, pubblicati su GitHub Pages.
+Sito dell'associazione studentesca Red Propulsion. Next.js 16 (App Router), React 19, TypeScript e Tailwind CSS 4. La build produce un export statico in `out/`, pubblicato su GitHub Pages.
 
 ## Sviluppo locale
 
-Richiede Node.js 24 LTS (versione indicata anche in `.nvmrc` e in CI).
+Richiede Node.js 24 LTS (`.nvmrc`, `engines` in `package.json` e CI).
 
 ```bash
 npm ci
@@ -16,67 +16,56 @@ Apri <http://localhost:3000>. Prima di pubblicare:
 ```bash
 npm run lint
 npm run typecheck
-npm test
 npm run build
-npm run check:export
 ```
+
+Next.js 16 non esegue ESLint durante la build: `npm run lint` resta un controllo separato. `npm run typecheck` genera prima i tipi delle rotte con `next typegen`.
 
 ## Struttura
 
 - `src/app/`: rotte, layout, metadata e sitemap.
-- `src/components/`: componenti di presentazione e interazioni.
-- `src/content/`: contenuti JSON; modificarli per aggiornare testi, membri, sponsor e FAQ.
-- `public/`: immagini, icone e file statici.
-- `.pages.yml`: schema dei contenuti per l'editor Pages CMS.
-- `.github/workflows/nextjs.yml`: build e pubblicazione su GitHub Pages al push su `main`.
+- `src/components/`: presentazione e interazioni; componenti server salvo dove servono stato o API del browser.
+- `src/content/`: contenuti JSON, modificabili anche con Pages CMS.
+- `src/lib/`: regole condivise, tipi e manifest delle immagini.
+- `scripts/prepare-images.mjs`: generazione delle varianti WebP.
+- `public/`: originali, varianti generate, font e file statici.
+- `.pages.yml`: schema dei contenuti per Pages CMS.
+- `.github/workflows/nextjs.yml`: lint, typecheck, build e pubblicazione su `main`.
 
-Le rotte pubbliche sono `/`, `/projects`, `/partners`, `/faq` e `/contacts`. `/departments` resta una pagina in costruzione. `/team` reindirizza a `/projects` ed è esclusa dalla sitemap e dall’indicizzazione.
+Le rotte pubbliche sono `/`, `/projects`, `/partners`, `/faq` e `/contacts`. `/departments` resta una pagina in costruzione, esclusa dall'indicizzazione. `/team` reindirizza a `/projects`, usa il canonical di Progetti ed è escluso da sitemap e indicizzazione; componenti, JSON e foto sono conservati per un ripristino futuro. I file in `public/`, comprese le foto, restano raggiungibili: il redirect non è un controllo di accesso agli asset.
 
-Progetti legge testi, ruoli, posti e moduli da `src/content/projects_page.json`, modificabile tramite Pages CMS. Il campo `applicationsOpen` controlla il collegamento al modulo e la visualizzazione dei posti: quando è `false`, il sito mostra lo stato “Candidature chiuse” e non pubblica il link. La precedente pagina Team è conservata in `src/components/TeamPage.tsx`, insieme al JSON, ai componenti e alle foto originali, senza essere renderizzata nella rotta pubblica.
+Progetti legge testi, ruoli, posti e moduli da `src/content/projects_page.json`, modificabile con Pages CMS. Il campo `applicationsOpen` controlla il collegamento al modulo e la visualizzazione dei posti: quando è `false`, il sito mostra “Candidature chiuse” e non pubblica il link.
 
-`public/assets/` contiene tutti i 48 file originali dell’archivio fornito il 29 settembre 2026. Le due patch SVG sono usate nella pagina Progetti; gli altri assets sono disponibili per uso futuro. La preparazione delle immagini elabora i raster di questa cartella solo quando referenziati nei contenuti JSON, evitando copie inutilizzate.
+La home e le pagine dinamiche usano i blocchi `text_section`, `cards_section` e `bento_section` definiti in `src/components/Block.tsx`. I percorsi delle foto Team sono centralizzati in `src/lib/team-profiles.mjs`.
 
-La home e le pagine dinamiche usano i blocchi `text_section`, `cards_section` e `bento_section` definiti in `src/components/Block.tsx`. Ogni blocco è validato durante la build. Per le schede, il collegamento del pulsante usa il campo `url`.
+## Convenzioni dei contenuti
+
+- I progetti richiedono testi non vuoti, patch locale con testo alternativo e dimensioni intere positive, URL di candidatura HTTP(S) e almeno un ruolo con un numero intero positivo di posti. Titoli di progetti e ruoli non possono essere duplicati nello stesso elenco.
+- `bento_section` accetta al massimo due immagini: il limite è allineato tra CMS e componente.
+- Sottotitolo della landing, risposte FAQ e testi dei progetti sono testo semplice. Footer, sezioni testuali e corpi delle schede sono Markdown, renderizzato da `RichText`; l'HTML grezzo non viene eseguito.
+- I percorsi delle immagini locali iniziano con `/` e devono corrispondere a un file presente in `public/`.
+- Per le schede, il pulsante usa il campo `url`.
+
+## Immagini e font
+
+`next.config.ts` imposta `output: "export"` e disabilita l'ottimizzazione server delle immagini. In fase di build `scripts/prepare-images.mjs` genera varianti WebP in `public/optimized/` e il manifest `src/lib/image-variants.json`, usato da `ResponsiveImage` per costruire `srcSet`; senza variante viene usato l'originale. La qualità è 82 per le fotografie e 90 per le patch SVG dei progetti. Le larghezze sono 640/1280/1920 per foto e banner, 160/400/800 per profili e placeholder, 96/320 per loghi e altre immagini, 190/380/570 per le patch. Le varianti non ingrandiscono gli originali e tengono conto dell'orientamento EXIF.
+
+Non eliminare gli originali. Dopo aver aggiunto o modificato immagini, rieseguire la build oppure `node scripts/prepare-images.mjs` per aggiornare manifest e varianti. I risultati sono memorizzati in `.next/cache/image-preparation.json`, così le varianti invariate vengono riutilizzate. Evitare due raster con lo stesso percorso e nome base ma estensioni diverse.
+
+Orbitron e Roboto Condensed sono distribuiti localmente in WOFF2, con le licenze SIL Open Font License in `public/fonts/`; `FontPreloads` gestisce i preload dei subset latini.
 
 ## Pubblicazione
 
-La build prepara automaticamente copie WebP responsive in `public/optimized/`, mantenendo gli originali. Dopo un caricamento di immagini durante lo sviluppo, eseguire `node scripts/prepare-images.mjs`. `ResponsiveImage` usa le varianti disponibili e conserva il supporto per percorsi nuovi o remoti.
-
-I titoli e le descrizioni di Contatti e Partners vengono letti dai rispettivi JSON. Le foto del team possono usare `imgSrc`; in sua assenza resta disponibile la convenzione dei nomi esistente. Le pagine con sezioni vuote restano visitabili, con `noindex`.
-
-`next.config.ts` imposta `output: "export"` e disabilita l'ottimizzazione server delle immagini. Il workflow verifica anche le pull request verso `main`: installa con `npm ci`, esegue lint, test, build (comprensiva di verifica TypeScript, contenuti e immagini) e controllo dell’export. La pubblicazione di `out/` è limitata ai push su `main` e alle esecuzioni manuali su `main`. Il dominio è specificato in `public/CNAME`.
-
-## Anteprima dell’export
-
-Dopo `npm run build`, eseguire `npm start` oppure `npm run preview` e aprire <http://127.0.0.1:3000>. Il server locale serve `out/`, risolve anche rotte come `/projects` e restituisce la pagina 404 con stato HTTP 404. È un’anteprima locale, non un server di produzione. Impostare `PORT` per usare una porta diversa. Sviluppo e anteprima usano normalmente la stessa porta: fermarne uno prima di avviare l’altro. Next.js 16 usa cartelle distinte per build e sviluppo.
-
-## Contratto dei contenuti
-
-- `npm run check:content` verifica i 10 JSON: blocchi, link espliciti, immagini locali e campi dei progetti. Viene eseguito automaticamente prima di ogni build.
-- I progetti richiedono testi non vuoti, patch locale con testo alternativo e dimensioni intere positive, URL di candidatura HTTP(S) e almeno un ruolo. Ogni ruolo richiede un numero intero positivo di posti. Titoli di progetti e ruoli non possono essere duplicati nello stesso elenco.
-- `bento_section` accetta al massimo due immagini, come il componente attuale. Il limite vale sia nel CMS sia nel controllo dei contenuti.
-- Sottotitolo della landing, risposte FAQ e testi dei progetti sono testo semplice. Corpo del footer, sezioni testuali e corpi delle schede sono Markdown, renderizzato da `RichText`. L’HTML grezzo non viene eseguito.
-- I percorsi delle immagini locali iniziano con `/` e devono esistere sotto `public/`. I profili Team conservano anche la convenzione dei nomi e i vecchi handle LinkedIn, normalizzati da `TeamTabs`.
-- La pagina Team conservata non viene renderizzata pubblicamente. Foto e altri file in `public/` rimangono raggiungibili: il redirect non è un controllo di accesso agli assets.
-
-## Immagini e verifiche
-
-`sharp` è una dipendenza di sviluppo diretta. La preparazione conserva gli originali e genera WebP a qualità 82: foto dei blocchi Bento e sfondi dei banner a 640/1280/1920 px; profili e placeholder a 160/400/800 px; loghi e altre immagini a 96/320 px. Non ingrandisce gli originali, considera l’orientamento EXIF e segnala collisioni tra nomi di output. Non usare due raster con stesso percorso e nome base ma estensioni diverse. Un’immagine raster destinata a una nuova posizione grande va inclusa nella relativa politica dello script.
-
-`npm test` verifica i contratti dei contenuti e la risoluzione delle foto Team. `npm run check:export` controlla rotte, canonical, noindex/sitemap, immagini generate e profili, link effettivi ai moduli e redirect Team. Questi controlli non sostituiscono una prova nel browser né verificano la disponibilità dei servizi esterni.
+La CI verifica le pull request e pubblica solo i push su `main` o le esecuzioni manuali su `main`: installa con `npm ci`, esegue lint, typecheck e build. Il dominio è specificato in `public/CNAME`.
 
 ## Manutenzione delle dipendenze
 
-Versioni, motivazioni degli aggiornamenti e vincoli di compatibilità sono documentati in [docs/dependencies.md](docs/dependencies.md). Next.js ed `eslint-config-next` devono restare allineati; React e React DOM devono avere la stessa versione. `npm run typecheck` genera prima i tipi delle rotte con `next typegen`, così funziona anche su un checkout nuovo. Next.js 16 non esegue il lint durante la build: `npm run lint` resta un controllo distinto, obbligatorio in CI.
-
-## Documentazione del progetto
-
-- [Architettura e responsabilità del codice](docs/architecture.md).
-- [Team temporaneamente oscurata e aggiornamento dopo il censimento di ottobre 2026](docs/team-status.md).
-- [Dipendenze e vincoli di aggiornamento](docs/dependencies.md).
-
-La validazione dei blocchi è condivisa tra rendering e prebuild in `src/lib/content-validation.mjs`. I percorsi delle foto Team sono centralizzati in `src/lib/team-profiles.mjs`, usato anche dal controllo dell'export.
+Next.js ed `eslint-config-next` devono restare alla stessa versione, così come React e React DOM. TypeScript è fissato a `~6.0.3`, ESLint alla serie 9 e i tipi Node alla major 24. Le versioni effettive sono registrate in `package-lock.json`.
 
 ## Fotografie della home
 
-La sezione La nostra storia usa una foto fissa e una galleria manuale di otto foto da `public/assets/`. I dati sono in `index_page.json`: `imageAlt` descrive la foto principale; `gallery` contiene `src`, `alt`, `position` opzionale e `fit` (`cover` o `contain`). Le fotografie verticali usano `contain` per conservare il soggetto intero. La galleria supporta scorrimento touch, frecce e tastiera senza autoplay, con rispetto del movimento ridotto. Le foto della galleria ricevono varianti responsive come le altre fotografie Bento. Gli originali rimangono conservati.
+La sezione “La nostra storia” usa una foto fissa e una galleria manuale di otto foto da `public/assets/`. I dati sono in `index_page.json`: `imageAlt` descrive la foto principale; `gallery` contiene `src`, `alt`, `position` opzionale e `fit` (`cover` o `contain`). Le foto verticali usano `contain` per conservare il soggetto intero. La galleria supporta scorrimento touch, frecce e tastiera senza autoplay, con rispetto del movimento ridotto. Le foto ricevono varianti responsive come le altre immagini Bento; gli originali rimangono conservati.
+
+## Team
+
+La sezione Team è temporaneamente oscurata in attesa del censimento. Per ripristinarla: aggiornare `team_page.json` e lo schema CMS con membri, ruoli e struttura verificati; controllare foto e link LinkedIn, usando `imgSrc` esplicito per i nuovi file; verificare componenti e filtri; riattivare la rotta `/team` con layout, canonical, robots e sitemap coerenti; aggiornare la navigazione secondo la decisione del team. `TeamPage.tsx`, `TeamTabs.tsx`, `TeamCard.tsx`, `src/lib/team-types.ts`, `src/lib/team-profiles.mjs`, il JSON e le foto vanno conservati.
